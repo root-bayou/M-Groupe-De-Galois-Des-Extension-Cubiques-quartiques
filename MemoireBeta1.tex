@@ -1,0 +1,2154 @@
+\documentclass[12pt,french,final,a4paper,openright]{report}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{emptypage}
+\usepackage{graphicx,amssymb,amsfonts,amsmath,amsthm}
+\usepackage{relsize} %% modifier taille en mode math
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{mathtools, nccmath, textcomp}
+\usepackage[french]{babel}
+\usepackage{calc}
+\usepackage{setspace}
+\usepackage[left=2.5cm,right=2.5cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{tikz}
+\usepackage{nicefrac}
+\usepackage{hyperref}
+% ajoute (entre autre) la bibliographie dans la table des matieres
+\usepackage[nottoc]{tocbibind}
+\usepackage{colortbl}
+\DeclareMathOperator{\pgcd}{pgcd}
+\newtheorem{theorem}{Théorème}[chapter]
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollaire}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Définition}
+\newtheorem{example}[theorem]{Exemple}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemme}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remarque}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\usepackage{amsmath}
+\usepackage[all]{xy}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\Fq}{\mathbb{F}_q}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\al}{\alpha}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{titlesec}
+\usepackage[Lenny]{fncychap}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage[french,ruled, lined ]{algorithm2e}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\topmargin}{-1.5cm}
+\setlength{\topskip}{0cm}
+\setlength{\textheight}{25.7cm}
+\setlength{\textwidth}{16.5 cm}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\evensidemargin}{0cm}
+\pagenumbering{arabic}
+\pagestyle{myheadings}
+\parindent=1em
+%%\linespread{1.4}
+\author{ETUDIANT 1 \&  ETUDIANT 2}
+\title{titre du mémoire }
+\makeatother
+
+\usepackage{babel}
+\makeatletter
+\addto\extrasfrench{%
+   \providecommand{\og}{\leavevmode\flqq~}%
+   \providecommand{\fg}{\ifdim\lastskip>\z@\unskip\fi~\frqq}%
+}
+\makeatother
+
+\begin{document}
+
+\noindent
+\begin{minipage}[b]{0.2\textwidth}    %% b or t, default is c
+	\vspace*{-50\baselineskip}
+	\includegraphics[width=\linewidth]{/home/bayou/Bureau/usthb.png}
+\end{minipage}%
+\begin{minipage}[b][1.5cm]{0.6\textwidth}
+	%  \centering\bfseries\large\center 
+	\vspace*{-50\baselineskip}
+	République Algérienne Démocratique et Populaire \vfill
+	
+\end{minipage}%  
+\begin{minipage}[b]{0.2\textwidth}
+	\vspace*{-50\baselineskip}
+	\includegraphics[width=\linewidth]{/home/bayou/Bureau/usthb.png}
+\end{minipage}
+
+
+\begin{center} 
+	
+	
+	
+	Ministère de l'Enseignement Supérieur et de la Recherche Scientifique \\[0.5cm] 
+	\large \textbf{Université des Sciences et de la Technologie Houari Boumediene}\\[0.5cm] 
+	
+	
+	%\includegraphics[width=5cm , height=4cm]{Logo.jpg}\\[1cm]
+	
+	
+	%----------------------------------------------------------------------------------------
+	\textsc{\Large \textbf{Faculté de Mathématiques}}\\[0.3cm] 
+	\textsc{\Large \textbf{Département d'Algèbre et Théorie des Nombres}}\\[0.5cm] 
+	\textsc{\LARGE \textbf{Mémoire de Master}}\\[1cm] 
+	\textsc{\LARGE \textbf{Filière: Mathématique }}\\[1.5cm]
+	\textsc{\LARGE Spécialité: Arithmétique Codage et Combinatoire }\\[0.5cm] 
+	
+	
+	\HRule \\[0.2cm]
+	{ \bfseries GROUPES DE GALOIS DES EXTENSIONS CUBIQUES ET QUARTIQUES }\\[0.2cm] 
+	
+	\HRule \\[1.5cm]
+	\emph{\textbf{Présenté par :}} \\
+	\vspace*{0.05cm}
+	\textsc{Bayou Mohamed Cherif\; \& \; Alliche Amrane}  \vspace{1cm}
+\end{center}
+\begin{minipage}{0.5\textwidth}
+	\begin{flushleft} \large
+		\emph{\textbf{Encadré par:}}\\
+		%\vspace*{0.1cm}
+		M.~Bensebaa Boualem 
+	\end{flushleft}
+\end{minipage}
+
+\vspace*{1cm}
+\begin{minipage}{0.85\textwidth}
+	\begin{flushleft} \large
+		
+		%%\textbf{Soutenu le:} /07/2021\\
+	\end{flushleft}
+\end{minipage}\\
+~
+
+
+\begin{minipage}{0.85\textwidth}
+	\begin{flushleft} \large
+		
+		%\textbf{\\[0.3cm] }
+		\emph{\textbf{Devant le jury composé de :}} \\
+		\textbf{\\}
+		\hspace*{5cm}  M.~enseignant 1      \hfill  Président\\      
+		\hspace*{5cm}  M.~enseignant 2     \hfill   Examinateur
+	\end{flushleft}
+\end{minipage}\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace*{4cm}
+\begin{center}
+	\begin{Huge}
+		\textit{\textbf{Remerciements}}
+	\end{Huge}
+\end{center}
+\vspace*{1cm}
+%\begin{large}
+\tableofcontents \thispagestyle{empty}
+\listoffigures
+\listoftables
+\listofalgorithms
+\pagestyle{fancy}
+\renewcommand\footrulewidth{1pt}
+\chapter*{\begin{center}
+		\textbf{Introduction}
+\end{center}} 
+%\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\addcontentsline{toc}{chapter}{Introduction}
+\pagestyle{fancy}
+\renewcommand\headrulewidth{1pt}
+\renewcommand\footrulewidth{1pt}
+\setstretch{1.5}
+\chapter{EXTENSION DE CORPS}
+\lhead{CHAPITRE 1}
+\rhead{EXTENSION DE CORPS }
+Dans tout ce qui suit $K$ désigne un corps commutatif.
+
+\section{Propriété élémentaires des extensions de corps}
+	
+\begin{definition}
+On appelle extension de $K$, la donnée d'un corps $L$ et d'un homomorphisme
+$i:\,K\longrightarrow L$ de telle sorte qu'on ait l'isomorphisme $K\simeq i\left(K\right)$.\\
+L'homomorphisme $i$  est appelé plongement de $K$ dans $L$.
+\end{definition}
+%
+Ainsi définie, $K$ est un sous-corps de $L$, à isomorphisme près.\\
+Lorsque $K\subset L$, le corps $L$ est alors considéré comme un $K$-espace vectoriel. Soit,
+dans ce cas, $\alpha\in L$  et définissons le morphisme d'anneaux suivant
+\[
+\begin{array}{cccc}
+\phi_{\alpha}: & K\left[X\right] & \longrightarrow & K\left[\alpha\right]\\
+ & X & \longrightarrow & \alpha
+\end{array}
+\]
+ de noyau $\ker\phi_{\alpha}$ qui est un idéal premier et principal. 
+\begin{definition}
+On dit que l'élément $\alpha\in L$ est algébrique lorsque $\ker\phi_{\alpha}\ne\left\{ 0\right\} $,
+sinon il sera dit transcendant. 
+\end{definition}
+\begin{flushleft}
+		\textbf{Notation :} L'extension $L$ d'un corps $K$ est notée $\, L /K $.
+\end{flushleft}
+\begin{example}
+\begin{enumerate}
+    \item Tout corps de caractéristique 0 est extension du corps $\,\mathbb{Q}$.
+   \item  Tout corps de caractéristique $p \ne 0$ est extension du corps $\,\mathbb{Z}\, /\, p\mathbb{Z}\,$.\end{enumerate}
+\end{example}
+	%
+	\begin{definition}
+		On dit qu'un corps $M$ est un \textbf{corps intermédiaire} pour une extension $L /K $, si $K \subset M \subset L$.
+	\end{definition}
+	%
+\begin{definition}
+		Soit $n \in \mathbb{N}^*$. \\
+		Le corps $K(\alpha_1,\alpha_2,\ldots ,\alpha_n)$, où les $\alpha_i$, $1 \leq\alpha_i\leq n $ sont des élément de $L$ , est appelée extension de $K$ obtenue par adjonctions successives de ces éléments. On écrira alors :
+\begin{equation*}
+\begin{split}
+				K(\alpha_1,\alpha_2) = K(\alpha_1)(\alpha_2) \,, K(\alpha_1,\alpha_2 ,\alpha_3) =  K(\alpha_1,\alpha_2)(\alpha_3),\ldots\\
+				\ldots ,K(\alpha_1,\alpha_2,\ldots ,\alpha_n) =
+				K(\alpha_1,\alpha_2,\ldots ,\alpha_{n-1})(\alpha_n).
+			\end{split}
+\end{equation*}
+\end{definition}
+%
+\begin{definition}
+		Soit $ L/K $ une extension de corps. On suppose que $K \subseteq L$; alors pour tout partie non vide $\delta$ de $L$, le sous-corps de $L$ engendré par
+		$K \cup \delta$ est noté $K(\delta)$, appelé extension de $K$ obtenue par l'adjonction de $\delta$ à $K$.
+	\end{definition}
+	\begin{remark}
+		Pour $\delta = \{\alpha\}$, où  $\alpha \in L$, $K\left(\delta\right)$ s'écrit $K\left(\alpha\right)$, elle est dite \textbf{extension simple} de $K$ obtenue par l'adjonction de $\alpha \,\text{à }\, K$. \\
+	\end{remark}
+
+%
+		
+	\subsection{degré d'une extension de corps}
+	Pour une extension $L/K$ donnée, le corps $L$ est considéré comme un espace vectoriel sur $K$.
+	Rappelons que tout espace vectoriel  de dimension  finie admet une base finie et toutes les bases ont le même cardinale, appelé dimension de cet espace vectoriel. 
+	
+	\begin{definition} Soit $L/K$ une extension de corps.\\
+	On appelle degré de l'extension $L/K$, noté $[L/K]$,  la dimension du $K$-espace vectoriel $L$.\\
+	Lorsque la dimension du  $K$-espace vectoriel $L$ est  finie, l'extension $L/K$ est dite de degré finie et on note par $[L/K]=\dim_K L$ le degré de cette extension.
+	\end{definition}
+	%
+	\begin{theorem}{(Théorème de la base télescopique)}\label{th1}
+		Étant données les extensions de corps $L / K$ et $M / L$, alors
+		\begin{equation}\label{eq2}
+			[M/K] = [M / L]\times[L / K].
+		\end{equation}
+	\end{theorem}
+	\begin{proof}
+		(\textbf{Voir Calais J. Extensions de corps Théorie de Galois. Page [6]}).
+	\end{proof}	
+		Du théorème \eqref{th1}, on déduit le corolaire suivant.
+	\begin{corollary}
+		soit $L / K$ une extension de corps, $[L / K] < \infty$; si,$ \:\left\lbrace K_i\right\rbrace $,\\
+		$r \in \mathbb{N}^{*} \,, 1 < r \leq n $ est une famille finie, totalement ordonnée, de corps intermédiaires, alors
+		\begin{equation*}
+			\begin{split}
+				K \subseteq K_1 \subseteq K_2 \subseteq \ldots \subseteq K_r \subseteq L \; implique \\
+				[L / K] = [L / K_r][K_r / K_{r-1}] \ldots [K_1 / K].
+			\end{split}
+		\end{equation*}
+
+	\end{corollary}
+\section{Isomorphisme d'extension de corps }
+	Une extension $L$ de $K$ est définie par la donnée d'un couple $(L,i)$, où $i$ est un plongement de $K$ dans $L$.
+	\begin{definition}
+		Soit $K$ et $L$ deux corps isomorphes, on dit que les extensions $L/K$ et $M / F$, définies respectivement par les couple $(L,i)$ et $(M,j)$ sont isomorphes, s'il existe un couple d'isomorphisme $(\lambda,\mu)$, respectivement, de $K$ sur $F$ et de $L$ sur $M$, tel que
+		le diagramme suivant est commutatif :
+		\begin{equation*}
+			\xymatrix{
+				K \ar[r]^\lambda \ar[d]^i  & F \ar[d]^j \\
+				L \ar[r]^\mu & M
+			}
+		\end{equation*}
+		C'est à  dire $\mu \circ i = j \circ \lambda $. \\
+		On dit alors que le couple $(\lambda,\mu)$ est un isomorphismes d'extensions de corps de $L/K$ sur $M / F$. \\
+
+		En particulier :
+		\begin{itemize}
+			\item[]{$\bullet$} Si $K \subseteq L$ et $F \subseteq M$, on a,
+			\begin{equation*}
+				\mu \circ i = j \circ \lambda \iff \mu_{/K} = \lambda.
+			\end{equation*}
+			\item[]{$\bullet$} Si $K = F \,, \lambda = id_k$, le diagramme devient alors,
+		\end{itemize}
+		\begin{equation*}
+			\xymatrix{
+				K \ar[d]^i \ar[rd]^j\\
+				L \ar[r]^\mu & M
+			}
+		\end{equation*}
+		D'où $\mu \circ i = j$. \\
+
+		Si de plus, $\mu \,, \alpha$ sont les injections canoniques alors,
+		\begin{equation*}
+			\mu \circ i = j  \iff \mu_{/K} = id_K.
+		\end{equation*}
+		et dans ce cas on dit que les corps $M$ et $L$ sont conjugués sur $K$, (on dit aussi que ils sont $K$-isomorphes).
+	\end{definition}
+	\newpage
+	\section{Extensions algébriques - Clôtures algébriques}
+	\subsection{\'Eléments algébriques}
+	\begin{definition}
+		Soit $L/K$ une extension de corps, soit $\alpha \in L$ .
+		$\alpha$ est dit algébrique sur $K$, s'il existe un polynôme $p(X)\in K[X]$, non nul,  tel que $p(\alpha) = 0 $. Dans ce cas, l'extension $K(\alpha)$ est dite \textbf{simple et algébrique} sur $K$.\\
+		Lorsque $\alpha$  n'est pas algébrique il est dit transcendant
+	\end{definition}
+	%
+	\begin{proposition}
+		Soit $L /K$ une extension de corps, pour tout $\alpha$ dans $L$ on associe l'application
+		\begin{equation*}
+			\begin{split}
+				f_\alpha : K [X] \longrightarrow L \\
+				g(X) \longrightarrow g(\alpha)
+			\end{split}
+		\end{equation*}
+		où $f_\alpha$ désigne un morphisme d'anneaux unitaires et on a
+		\begin{equation*}
+			f_\alpha \, est \, non \, injectif \iff \alpha \, est \, algébrique \, sur \, K
+		\end{equation*}
+
+	\end{proposition}
+	\begin{proof} $K[\alpha]$   étant un sous-anneau du corps $L$, il est donc intègre et   $K[\alpha] = Imf_\alpha$. De plus, on a les équivalences suivantes
+		\begin{equation*}
+			\begin{array}{r c l}
+				f_\alpha \, est \, non \, injectif & \iff & Kerf_\alpha \ne \left\lbrace 0\right\rbrace \\
+				& \iff & \exists g(X) \in K[X]\textbackslash \left\lbrace 0 \right\rbrace \, tel \, que \, g(\alpha) = 0 \\
+				& \iff & \alpha \, est \, algébrique \, sur \, K
+			\end{array}
+		\end{equation*}
+	\end{proof}
+%
+	\begin{definition}
+		Soit $L/K$ une extension de corps, $\alpha \in L$ un élément algébrique sur $K$, le polynôme non constant $p(X)$, unitaire et irréductible de $K[X]$, vérifiant $p(\alpha) = 0$, est appelé le polynôme minimal de $\alpha$ sur $K$, noté $irr_K(\alpha,X)$.
+	\end{definition}
+	Le résultat ci-dessous donne une caractérisation du polynôme minimal d'un élément algébrique.
+	\begin{theorem}
+		Soit $L /K$ une extension de corps, si $\alpha \in L$ et un élément algébrique sur $K$, alors
+		\begin{enumerate}
+			\item Il existe un unique polynôme $p(X)$, unitaire et irréductible de $K[X]$ vérifiant
+			\begin{equation}\label{t1}
+				\forall f(X) \in K[X]\textbackslash\left\lbrace 0\right\rbrace \, et \, f(\alpha) = 0 \iff p(X)|f(X) \, dans \, K[X].
+			\end{equation}
+			\item L'extension simple $K(\alpha) /K$ vérifie
+			\begin{equation}\label{t2}
+				K(\alpha)=\left\lbrace f(\alpha), \, f(X) \in K[X]\right\rbrace .
+			\end{equation}
+			\item \begin{equation}\label{t3}
+				[L / K] = [K(\alpha) / K] = deg \,p .
+			\end{equation}
+		\end{enumerate}
+	\end{theorem}
+	\begin{proof} (\textbf{Voir Calais J. Extensions de corps Théorie de Galois. Page [13-14]}).
+	\end{proof}
+	\begin{theorem}
+		Soit $K$ un corps et soit $P(X) \in K[X]$, un polynôme unitaire et irréductible, alors Il existe une extension simple de  $K(\alpha)/K$, telle que $\alpha$ est algébrique sur $K$ de polynôme minimal $ irr_K(\alpha,X)=P(X)$.
+	\end{theorem}
+	\begin{proof}
+		$K$ étant un corps donc l'anneau $K[X]$ est factoriel, donc $p(X)$ unitaire et irréductible est un élément premier non nul de $K[X]$, de plus $p(X)$ est maximal dans $K[X]$, ( $K[X]$ est un domaine principal ), donc on a ${\displaystyle L = \dfrac{K[X]}{(p(X))} }$ \, corps .
+		
+		Soit $\lambda$ l'injection canonique de $K$ dans $K[X]$ et soit $\delta$ la surjection canonique de $K[X]$ sur $L$, alors $\delta \circ \lambda$, un morphisme d'anneaux unitaire de $K$ dans $L$, est un monomorphisme.  On en déduit que $L$ est une extension de $K$, telle que $\forall \beta \in K$ est identifiable a son image par le monomorphisme $\delta \circ \lambda$.\\
+
+		Dans $L$ posons $f(X) := \alpha$.
+		\begin{equation*}
+			L = \left\lbrace f(g(X)) \, ; \, g(X) \in K[X]\right\rbrace  = \left\lbrace g(\alpha) \, ; \, g(X) \in K[X] \right\rbrace .
+		\end{equation*}
+		D'autre part
+		\begin{equation*}
+			f(p(X)) = 0 \Longrightarrow p(\alpha) = 0 .
+		\end{equation*}
+		l'élément $\alpha$ de $L$ est nécessairement algébrique sur $K$ ce qui implique que $L = K(\alpha)$, on conclut que $L$ est une extension simple et algébrique de $K$, de plus par hypothèse $p(X)$ est unitaire et irréductible dans $K[X]$, donc
+		\begin{equation*}
+			p(\alpha) = 0 \Longrightarrow p(X) = irr_K(\alpha,X).
+		\end{equation*}
+	\end{proof}
+	\begin{corollary}
+		Tout extension simple et algébrique d'un corps $K$ est isomorphe a un corps de la forme $\dfrac{K[X]}{(p(X))}$, où $p(X)$ est un polynôme unitaire et irréductible dans $K[X]$.
+	\end{corollary}
+	\begin{example}\label{exmple1}
+		Soit $p(X) = X^3 - 7$ dans $ \mathbb{Q} [X]$, le polynôme $p(X)$ est unitaire, irréductible car il est d'Eisenstein pour le nombre premier $t = 7$.\\
+		Posons $\alpha = \sqrt[3]{7}$, on a bien $p(\alpha) = 0$ donc
+		\begin{equation*}
+			irr_K(\sqrt[3]{7},X) = X^3 - 7 \, ; \, \mathbb{Q}(\sqrt[3]{7}) \simeq \dfrac{\mathbb{Q}[X]}{(X^3 - 7)} \, ; \, [\mathbb{Q}(\sqrt[3]{7}) / \mathbb{Q}] = 3.
+		\end{equation*}
+		la famille $\left\lbrace 1 , \alpha , \alpha^2\right\rbrace $ forme une base de $\mathbb{Q}(\sqrt[3]{7})$ comme $\mathbb{Q}$-espace vectoriel et tout élément $x \in \mathbb{Q}(\sqrt[3]{7}) $ s'écrit d'une manière unique tel que on a
+		\begin{equation*}
+			x = a + b\sqrt[3]{7} + c(\sqrt[3]{7})^2 \, ; \, a,b,c \in \mathbb{Q}.
+		\end{equation*}
+
+	\end{example}
+	\begin{definition}
+		Soit $\alpha$ et $\beta$ deux élément de $K$ et algébriques sur $K$, Soit $K(\alpha)/K$, $K(\beta)/K$, deux extensions simples et algébriques de $K$. On dit que les éléments $\alpha$ et $\beta$ sont conjugué sur $K$, si
+		\begin{equation*}
+			irr_K(\beta,X) = irr_K(\alpha , X).
+		\end{equation*}
+		Dans ce cas, on dit aussi que les extensions $K(\alpha) / K$, $K(\beta) / K$ sont $K$-isomorphes.
+	\end{definition}
+	\begin{definition}
+		On appelle corps de rupture d'un polynôme unitaire et irréductible  $p(X)$ sur $K$, le corps
+		$K(\alpha)$, tel que $ p(X)=irr_K(\alpha,X) $.
+	\end{definition}
+	%
+	
+		\subsection{Extension algébrique}
+	\begin{definition}
+		On dit que l'extension $L /K$ est algébrique sur $K$ , si tout élément de $L$ est algébrique sur $K$
+	\end{definition}
+	\begin{theorem}
+		Tout extension $L/K$ de degré fini, est nécessairement algébrique sur $K$.
+	\end{theorem}
+	\begin{proof}
+		On pose $[L /K] = n \in \mathbb{N}^*$, et soit $\alpha \in L$.
+		Dans le cas ou $\alpha \in K$, alors $\alpha$ est forcément algébrique sur $K$.
+		Supposons maintenant que $n > 1$ et que $\alpha \in L\setminus K$, l'ensemble $\left\lbrace \alpha^i \;; i \in \mathbb{N} \right\rbrace $
+		forme une base de $L$ comme $K$-espace vectoriel, par suite il existe un entier $t > 1$ et des élément $\beta_i, \; 0 \leq i \leq t$, non tous nul dans $L$, tels que
+		\begin{equation*}
+			\sum_{ 0 \leq i \leq t} \beta_i\alpha^i = 0 .
+		\end{equation*}
+		ce qui exprime que l'élément $\alpha$ est algébrique sur $K$.
+	\end{proof}
+	\begin{corollary}
+		Tout extension simple, algébrique d'un corps $K$ est une extension algébrique de $K$.
+	\end{corollary}
+	\begin{theorem}
+		L'extension $L /K$ est algébrique et de degré fini si et seulement si $L$ est obtenu par l'adjonction à  $K$ d'un nombre fini d'élément algébrique sur $K$.
+	\end{theorem}
+	
+		\begin{proof}
+	(\textbf{Voir Calais J. Extensions de corps Théorie de Galois. Page [18-19]}).
+	\end{proof}
+
+	\begin{theorem}
+		Soient $L/K$ et $M/L$ deux extensions de corps; alors
+		\begin{equation*}
+			L /K \; et \; M/L \; \text{algébriques} \;\Longrightarrow M/K \; \text{algébrique}  .
+		\end{equation*}
+	\end{theorem}
+\begin{proof}
+(\textbf{Voir Calais J. Extensions de corps Théorie de Galois. Page [20]}).
+	\end{proof}
+\subsection{Clôtures algébriques}
+\begin{proposition}
+	Soit $K$ un corps ; les propriétés suivantes sont équivalents:
+	\begin{enumerate}
+		\item $K$ est algébriquement clos.
+		\item Tout polynômes de $K[X]$ est scindé sur $K$.
+		\item Tout polynômes irréductibles de $K[X]$ est de degré $1$.
+	\end{enumerate}
+\end{proposition}
+\begin{proof}
+(\textbf{Voir Calais J. Extensions de corps Théorie de Galois. Page [67] })
+	
+\end{proof}
+\begin{example}
+	\begin{itemize}
+		\item Le corps $\mathbb{C}$ des nombres complexes est algébriquement clos.
+		\item Le corps $\R$ des réels n'est pas algébriquement clos.
+	\end{itemize}
+\end{example}
+\begin{theorem}
+	Pour tout corps $K$, il existe au moins un corps $E$ algébriquement clos qui est extension de $K$.
+\end{theorem}
+\begin{proof}
+	(\textbf{Voir Calais J. Extensions de corps Théorie de Galois. Page [72]})\end{proof}
+\begin{example}
+	\begin{itemize}
+		\item Pour les deux corps $\mathbb{Q} \text{ et }\R$ il existe le corps $\Omega=\C$ algébriquement clos, et extensions de ces deux corps.
+		\item Pour les corps finis de caractéristique $p$ (i.e., $\F_p$) il existe le corps $\Omega=\cup_{n\ge 0}\F_{p^{n!}}$ extension de $\F_p$ et algébriquement clos.
+	\end{itemize}
+\end{example}
+\begin{definition}
+	On appelle clôture algébrique $L$ de $K$ toute extension de $K$ telle que : 
+	\begin{enumerate}
+		\item $L$ est algébrique sur $K$.
+		\item $L$ est algébriquement clos.
+	\end{enumerate}
+\end{definition}
+\begin{theorem}
+	Tout corps $K$ admet une clôture algébrique qu'on note $\overline{K}$. Plus précisément, si $L$ un corps algébriquement clos, extension de $K$ alors $$\overline{K}=\left\lbrace \al\in L\text{, }\al\text{ algébrique sur }K\right\rbrace\subseteq L $$ est un corps et c'est une clôture algébrique de $K$.
+\end{theorem}
+\begin{proof}
+	(\textbf{Voir Calais J. Extensions de corps Théorie de Galois. Page [74] })
+	
+\end{proof}
+\begin{example}
+	\begin{enumerate}
+		\item Nous savons déjà que $\C$ est un corps algébriquement clos (le théorème fondamentale de l'algèbre), et on sait que $\C$ est une extension algébrique sur $\R$ (car $\C=\R(i)$) alors $\C$ est la clôture algébrique de $\R$ et on écrit $\overline{\R}=\C$.
+		\item Tandis que $\C$ n'est pas extension algébrique sur $\mathbb{Q}$ (car il existe en particulier $e$ et $\pi$ deux éléments transcendants sur $\mathbb{Q}$) donc $\C$ n'est pas une clôture algébrique de $\mathbb{Q}$. Mais comme $\C$ est algébriquement clos et contient $\mathbb{Q}$ alors $$\overline{\mathbb{Q}}=\left\lbrace \al\in\C\text{, }\al\text{ algébrique sur }\mathbb{Q}\right\rbrace \subsetneqq\C$$ est une clôture algébrique de $\mathbb{Q}$.
+	\end{enumerate}
+\end{example}
+	
+	\section{Extensions normales - Clôture normale}
+	\subsection{Corps de décomposition d'un polynôme}
+	Rappelons quelques définitions et résultats sur les polynômes à coefficients dans un corps $K$.
+	\begin{itemize}
+		\item[]{$\bullet$} Tout polynôme $f(X)$ de $K[X]$, de $deg\; n > 0$, admet exacteent $n$ racines, (distinctes ou confondus), dans $K$.
+		\item[]{$\bullet$} dans l'anneau $K[X]$, tout polynôme $f(X) \in K[X]/K$ s'écrit d'une manière unique
+		\begin{equation}\label{relationPoly}
+			f(X) = a(p_1(X))^{n_1}(p_2(X))^{n_2}.\ldots.(p_r(X))^{n_r},\; \text{et} \; \sum_{1 \leq i \leq r} n_r = deg \;f 
+		\end{equation}
+		où $a \in K^*$, $r \in \mathbb{N}^*$, pour $1 \leq i \leq r$ les $p_i(X)$ sont des polynômes unitaires et irréductibles deux à  deux distincts dans $K[X]$.		
+		\item[]{$\bullet$} Un polynôme $f(X)$ de $K[X]$ est dit scindé sur $K$, si dans la relation \eqref{relationPoly}, si $\forall i \; 1 \leq i \leq r$, $p_i(X)$ est de degré 1;
+		\begin{equation*}
+			f(X) = a(X-\alpha_1)^{n_1}(X-\alpha_2)^{n_2}\ldots (X-\alpha_r)^{n_r}.
+		\end{equation*}
+		\item[]{$\bullet$} Soit le polynôme $f(X) \in K[X]$, on suppose que $\alpha$ une racine de $f(X)$, ($f(\alpha) = 0$). le polynôme $f$, n'a que des racines simples $\iff f \land f' = 1$ et $f' \ne 0$, $f'$ désigne le polynôme dérivé de $f$.
+		
+	\end{itemize}
+	%
+	\begin{definition}
+		Soit $f(X)$ un polynôme non constant dans $K[X]$, on appelle corps de décomposition de $f$ sur $K$ noté $Dec_k(f(X))$, tout extension $L$ de $K$ vérifiant
+		\begin{enumerate} 
+		\item $K \subseteq L \; et \; f(X) \text{est scindé sur}\, L$.
+			
+			\item $K \subseteq E \subseteq L \; et \; f(X) \text{est scindé sur}\, E \Longrightarrow L = E$.
+		
+		\end{enumerate}
+	\end{definition}\label{def}
+	\begin{proposition}
+		Soit $L$ un corps de décomposition d'un polynôme $f(X)$ non constant de $K[X]$, si $n = deg\, f > 0$ et si $\beta_1,\beta_2,\ldots,\beta_n$ sont les racines distinctes ou confondues de $f$ dans $L$, alors, $L = K(\beta_1,\beta_2,\ldots,\beta_n)$, donc $L$ est une extension algébrique de degré fini sur $K$.
+	\end{proposition}
+	\begin{proof}
+		On a \begin{equation}\label{eqa5}
+			K \subseteq L \; et \; \forall i(1 \leq i \leq n), \, \beta_i \in L \Longrightarrow K(\beta_1,\beta_2,\ldots,\beta_n) \subseteq L.
+		\end{equation}
+		D'autre part le polynôme $f$ étant scindé sur $L$, et dans $L[X]$, $f(X)$ s'exprime par
+		\begin{equation*}
+			f(X) = a(X-\beta_1)(X-\beta_2)\ldots (X-\beta_n), \: \text{où} \, a \in K^*.
+		\end{equation*}
+		Donc d'après cette égalité $f$ est scindé sur $ K(\beta_1,\beta_2,\ldots,\beta_n)$, de plus la relation \eqref{eqa5} et la def.\ref{def} impliquent que $L = K(\beta_1,\beta_2,\ldots,\beta_n) $, on en déduit $L/K$ est une extension algébrique de degré fini.
+	\end{proof}
+	\begin{remark}
+		La construction d'un corps de décomposition d'un polynôme non constant n'est pas unique.
+	\end{remark}
+	\begin{corollary}
+		Deux corps de décompositions sur $K$ d'un polynôme $f(X)$ non constant dans $K[X]$, sont $K$-isomorphes.\\
+		Le polynôme $f(x)$ étant scindé sur $L$, qui est extension du corps $K$, alors $L$ contient nécessairement un corps de décomposition de $f$ sur $K$.
+	\end{corollary}
+	\begin{remark}
+		Le corps de décomposition d'un polynôme $f(X)$ non constant dans $K[X]$, est à  $K$-isomorphisme prés, la plus petit extension de $K$ sur laquelle $f(X)$ est scindé.
+	\end{remark}
+	\subsection{Extension Normale}
+	\begin{definition}
+		L'extension $L/K$ est dite normale si elle vérifie :
+		\begin{enumerate}
+			\item $L$ est algébrique sur $K$.
+			\item Tout polynôme irréductible de $K[X]$, qui a une racine dans $L$ est scindé sur $L$.
+			\item $L$ est corps de décomposition sur $K$, d'un polynôme de $K[X]$.
+		\end{enumerate}
+	\end{definition}
+	
+	\subsection{Clôture normale}
+	\begin{definition}
+		On appelle clôture normale d'une extension $L/K$, une extension $L'$ de $L$ telle que $K \subseteq L \subseteq L'$ telle que
+		\begin{enumerate}
+			\item $L'$ est extension normale de $K$.
+			\item $(L \subseteq N \subseteq L' \; \text{extensions normales de} \, K) \Longrightarrow N = L'.$
+		\end{enumerate}
+	\end{definition}
+	\begin{theorem}
+		Pour tout extension de degré fini $L/K$ il existe une clôture normale $N$, de degré fini sur $K$ à  $K$-isomorphisme prés.
+	\end{theorem}
+	\begin{proof}
+		(\textbf{Voir Calais J. Extensions de corps Théorie de Galois. Page [41] }).
+	\end{proof}
+	\begin{remark}
+		Si $L = K(\alpha)$, $N$ est une clôture normale de $K(\alpha)$ sur $K$ si, et seulement si, $N$ est corps de décomposition sur $K$ du polynôme $irr_K(\alpha,X)$.
+	\end{remark}
+	\begin{example}\label{exemple2}
+		On reprend l'exemple \ref{exmple1}, l'extension $\mathbb{Q}(\sqrt[3]{7})$, $\sqrt[3]{7} \in \mathbb{R}$, n'est pas une extension normale de $\mathbb{Q}$, car le polynôme $X^3 - 7$, irréductible sur $\mathbb{Q}$ n'a qu'une seule racine dans $\mathbb{Q}(\sqrt[3]{7})$.
+		Cependant, si $j$ et $j^2$ désignent les racines cubiques non réelles de l'unité, dans $\mathbb{C}$, donc $N = \mathbb{Q}(\sqrt[3]{7},j\sqrt[3]{7},j^2 \sqrt[3]{7})$ est corps de décomposition de $irr_\mathbb{Q}(\sqrt[3]{7},X)$, donc $N$ est une clôture
+		normale de $\mathbb{Q}(\sqrt[3]{7})$ sur $\mathbb{Q}$, contenue dans $\mathbb{C}$.
+	\end{example}
+	\section{Extensions séparables}
+	\subsection{polynômes irréductibles, polynômes séparables}
+	\begin{definition}
+		On dit qu'un polynôme irréductible de $K[X]$ est \underline{séparable}, si il n'a que des racines simples dans un corps de décomposition sur $K$.
+	\end{definition}
+	\begin{proposition}
+		Soit $f(X) \in K[X]\textbackslash K,$ et $f'(X)$ sont polynôme dérivé; alors
+		\begin{enumerate}
+			\item $car\, K = 0 \Longrightarrow f'(X) \ne 0$.
+			\item $car\, K = p \ne 0 \Longrightarrow (f'(X) = 0 \iff f(X) = g(X^p))$, $g(X) \in K[X]$.
+		\end{enumerate}
+	\end{proposition}
+	\begin{proof} On pose $d = deg \, f > 0$, donc dans $K[X]$
+		\begin{equation*}
+			(f(X) = \sum_{0 \leq i \leq d} \alpha_{i}X^i, \, \alpha_{i} \ne 0 ) \Longrightarrow f'(X) = \sum_{1 \leq i \leq d} i\alpha_{i}X^{i-1}.
+		\end{equation*}
+		\begin{enumerate}
+			\item $car \, K = 0 \Longrightarrow \alpha_{i} \ne 0 \Longrightarrow d\alpha_{d} \ne 0 \Longrightarrow f'(X) \ne 0$ .
+			\item $car \, K = p$, où $p$ est premier, l'expression de $f'(X)$ implique que
+			\begin{equation*}
+				\begin{array}{r c l}
+					f'(X) = 0 & \iff & \forall i(1 \leq i \leq d), \, i\alpha_{i} = 0 \\
+					& \iff &  \forall i(1 \leq i \leq d), \, (\alpha_{i} = 0 \, \text{ou} \, p | i ).
+				\end{array}
+			\end{equation*}
+			On en déduit que, pour $r \in \mathbb{N^*}$, $\beta_k \in K, \, \forall 0 \leq k \leq r$.
+			\begin{equation*}
+				\begin{array}{r c l}
+					f'(X) = 0 & \iff & f(X) = \sum_{0 \leq k \leq r } \beta_k X^{kp} \\
+					& \iff &  f(X) = g(X^p), \: \text{où} \, g(X) = \sum_{0 \leq k \leq r } \beta_k X^k.
+				\end{array}
+			\end{equation*}
+		\end{enumerate}
+	\end{proof}
+%
+	\begin{definition}
+		\begin{enumerate}
+			\item Un polynôme $f(X) \in K[X] \textbackslash K$ est dit séparable sur $K$ si ses tout diviseurs irréductibles sont séparables sur $K$.
+			\item Soit l'extension $L/K$, un élément $\alpha$ de $L$ est séparable sur $K$ si $\alpha$ est algébrique sur $K$ et le polynôme
+			$irr_k(\alpha,X)$ est séparable sur $K$.
+			\item L'extension $L/K$, est séparable si tout $\alpha$ de $L$ est séparable sur $K$.
+			\item Un corps $K$ est dit \underline{parfait} si toute extension algébrique de $K$ est séparable sur $K$.
+		\end{enumerate}
+	\end{definition}
+	\begin{remark}
+		On remarque que tout extension séparable d'un corps $K$, est nécessairement algébrique sur $K$.
+	\end{remark}
+	\begin{theorem}
+		\begin{equation*}
+			K \, \text{corps parfait} \iff (car \,K = 0) \, ou \, (car \, K = p \, et \, K = \left\lbrace a^p ; \, a \in K \right\rbrace ).
+		\end{equation*}
+	\end{theorem}
+	\begin{proof}
+		(\textbf{Voir Calais J. Extensions de corps Théorie de Galois. Page [44-45] }).
+	\end{proof}
+	\begin{corollary}
+		Tout corps fini de $car \, p \ne 0$ est parfait.
+	\end{corollary}
+	%
+	\begin{corollary}
+		Tout extension de $\mathbb{Q}$ est séparable.
+	\end{corollary}
+	%
+	\begin{proposition}
+		Soit $L/K$ une extension de degré fini, normale et séparable, alors $L$ est corps de décomposition sur $K$ d'un polynôme séparable.
+	\end{proposition}
+	\begin{proof}
+		On suppose que $[L /K] > 1$, $L$ est normale et de degré fini sur $K$, donc $L$ est corps de décomposition d'un polynôme non constant $f(X)$ de $K[X]$, de plus $L$ est séparable sur $K$, ainsi tout facteur irréductible de $f(X)$ est scindé $L$, est séparable sur $K$, on en déduit que $f(X)$ est aussi séparable sur $K$.
+	\end{proof}
+	
+	\begin{theorem}({\bf transitivité de la séparabilité})\\
+		Soient $L/K$ et $M/L$ deux extension de corps,alors on a l'équivalence
+		\begin{equation*}
+			M/K \: \text{séparable} \Longrightarrow M/L \: et \: L/K \: \text{sont séparables}.
+		\end{equation*}
+	\end{theorem}
+	\begin{proof}
+		(\textbf{Voir Calais J. Extensions de corps Théorie de Galois. Page [45]}).
+	\end{proof}
+%
+	\begin{theorem}{(Théorème de l'élément primitif)}\\
+		Une extension finie $L/K$ est séparable si, et seulement si, elle est simple.
+	\end{theorem}
+	\begin{proof}
+		(\textbf{Voir Calais J. Extensions de corps Théorie de Galois. Page [45-46]})
+	\end{proof}
+	%
+	\begin{definition}
+		Pour une extension $L/K$ séparable et de degré fini, on dit qu'un élément $\beta \in L$ est \underline{élément primitif}, si $L = K(\beta)$.
+	\end{definition}
+	
+	\begin{definition}
+		Étant donné une extension $L/K$, on dit qu'un automorphisme $\sigma$ du corps $L$ est un $K$-automorphisme de $L$, si $\sigma_{|K} = id_K$.
+	\end{definition}
+	%
+	\subsection{Extension galoisienne}
+	\begin{definition}\label{def2}
+		On dit que l'extension $L/K$ est galoisienne si elle est a la fois normale et séparable.
+	\end{definition}
+	
+	\begin{example}
+		Dans l'exemple \ref{exemple2}, on a vu que l'extension, $\mathbb{Q}(\sqrt[3]{7},j) / \mathbb{Q}$, est normale, de plus $[\mathbb{Q}(\sqrt[3]{7},j) / \mathbb{Q}] = 3$, donc de degré fini, par suite la $car \, \mathbb{Q} = 0$, donc l'extension $\mathbb{Q}(\sqrt[3]{7},j) / \mathbb{Q}$ est séparable, on en déduit que c'est aussi une extension galoisienne d'après la définition \ref{def2}.
+	\end{example}
+		
+
+	\chapter{Théorie de Galois}
+\lhead{CHAPITRE 2}
+\rhead{Théorie de  Galois}
+La théorie de Galois est l'étude des extensions de corps $L\,/\,K$ au moyens des groupes des $K$-automorphismes de $L$.\\Cette méthode introduite par le mathématiciens français \textbf{Evarist Galois (1811-1832)} s'avéra d'une grande efficacité; elle lui permit, en particulier, de résoudre un problème qui préoccupait les mathématiciens de son époque, à savoir la caractérisation des équations polynomiales dites \textit{résolubles par radicaux}.\\Par ailleurs grâce à  la théorie de Galois, il a été possible d'apporter des réponses à  de nombreuses questions que se posaient les mathématiciens, parfois depuis l'Antiquité, telle la construction des polygones réguliers par la règle et le compas.
+\newpage
+\section{Groupe de Galois et correspondance de Galois}
+\begin{definition}
+		On appelle \underline{groupe de Galois} d'une extension $L/K$, le groupe des $K$-automorphismes de $L$ qui sera noté $Gal(L / K)$.
+	\end{definition}
+	%
+	\begin{theorem}
+	\begin{itemize}
+		\item Soit $\overline{K}$ une clôture algébrique de corps $K$ est soit $P$ un polynôme irréductible de $K[X]$. Pour toute racine $\alpha$  de $P$ dans $\overline{K}$, alors le nombre de $K$-automorphismes de $K(\alpha)$ est égale au nombre de racines distinctes de $P$ dans $\overline{K}$(i.e., de $K$-conjugués de $\alpha$ distincts) qui appartiennent à  $K(\alpha)$.
+	\end{itemize}
+\end{theorem}
+\begin{proof}
+	Considérons le schéma suivant
+	\begin{equation}
+		\xymatrix{
+			\overline{K} \ar@{-}[d] & \overline{K} \ar@{-}[d]\\
+			K(\alpha) \ar@{^{(}->>}[r]^{\sigma} \ar@{-}[d] & \sigma(K(\alpha)) \ar@{-}[d]\\
+			K \ar@{^{(}->>}[r]^{id} & K
+		}
+	\end{equation}
+	On applique le théorème de prolongement dans le cas particulier du schéma ci-dessus ; on a donc $P'=P$ et le nombre d'isomorphismes de $K(\alpha)$ dans $\overline{K}$.\\Il suffit de voir quels sont ceux qui donnent les automorphismes de $K(\alpha)$ ; or, si $\sigma$ est un tel $K$-isomorphisme, on rappelle que $\sigma(K(\alpha))=K(\sigma(\alpha))$, où $\sigma(\alpha)$ est une racine de $P$ dans $\overline{K}$, et on a donc $K(\alpha)=\sigma(K(\alpha))$ si et seulement si $\sigma(\alpha)\in K(\alpha)$ (en effet, si $\sigma(\alpha)\in K(\alpha)$, on a l'inclusion $K(\sigma(\alpha))\subseteq K(\alpha)$ qui conduit à  l'égalité car $[K(\alpha)/K]=[K(\sigma(\alpha))/K]=d(P)$, d'où $[K(\alpha)/K(\sigma(\alpha))]=1$).
+\end{proof}
+%
+\begin{definition}\label{Corps fixe}
+Soit $L/K$  une extension de groupe de Galois $G$. Pour tout sous-groupe $H$ de $G$ on définit le sous-corps des invariant de $L$, ou sous-corps fixé, par $H$, noté par  $L^H$ ou bien $Inv_L(H)$,  donné par : $Inv_L(H)=\left\{x\in L / \sigma(x)=x,\,\forall  \sigma \in H   \right\}$
+\end{definition}
+%
+\begin{lemma}\label{lima1}
+	Soit $L/ K$ une extension de corps de groupe de Galois $Gal(L / K)$
+	\begin{enumerate}
+		\item Si $K_1 \subseteq K_2$, sont des sous-corps de $L$ $\Longrightarrow Inv_L(Gal(L / K_2)) \subseteq Inv_L(Gal(L / K_2))$.
+		\item Si $H_1 \subseteq H_2$ sont de sous-groupes de $Gal(L / K)$ $\Longrightarrow$ $Inv_L(H_2) \subseteq Inv_L(H_1)$.
+		\item Si $H \subseteq Gal(L / K)$ $\Longrightarrow H \subseteq Gal(L  / Inv_L(H))$.
+		\item Pour $H \leq Gal(L / K)$, si $K = Inv_L(H) \Longrightarrow K = Inv_L(Gal(L / K)). $
+		\item Si $H = Gal(L / E)$, pour un sous-corps $K$ de $L$ $\Longrightarrow H = Gal(L  / Inv_L(H))$.
+	\end{enumerate}
+\end{lemma}
+\begin{proof}
+{\bf Voir [Lemme 2.9, Field and Galois Theory, Patrik Morandi, Graduate Texts in Mathematics book series (GTM, volume 167)] page[29-30]}
+\end{proof}
+\begin{example}
+	\begin{itemize}
+		\item Soit $K=\mathbb{Q}$ et $\overline{K}=\overline{\mathbb{Q}}\subset \mathbb{C}$, et soit $P(X)=X^2+1$. $P$ irréductible dans $\mathbb{Q}[X]$, car $P(X+1)=X^2+2X+2$ est d'Eisenstein en $p=2$. Soit $i$ une racine de $P$ dans $\mathbb{C}$ ; alors l'autre racine est $-i$ qui est dans $\mathbb{Q}(i)$. Le groupe des $\mathbb{Q}$-automorphismes de $\mathbb{Q}(i)$ est d'ordre $2$ (l'automorphisme non triviale étant ici est la conjugaison complexe).
+		\item Toujours dans le même cadre, considérons $P(X)=X^3-2$ et soit $\sqrt[3]{2}$ la racine réelle de $P$ dans $\mathbb{C}$ ; comme $P$ est irréductible sur $\mathbb{Q}$ (car d'Eisenstein en $p=2$), les $\mathbb{Q}$-conjugués de $\sqrt[3]{2}$ sont $\sqrt[3]{2}$,$j\sqrt[3]{2}$,$j^2\sqrt[3]{2}$, où $j=\frac{-i+\sqrt{-3}}{2}$ est une racine primitive cubique de l'unité ; or $j\sqrt[3]{2}\notin \mathbb{Q}(\sqrt[3]{2})$, sinon on aurait $j\in \mathbb{Q}(\sqrt[3]{2})$, ce qui est absurde car $\mathbb{Q}(\sqrt[3]{2})\subset \mathbb(R)$ tandis que $j\notin \mathbb(R)$. Dans ce cas, le groupe des $\mathbb{Q}$-automorphismes est réduit Ã  l'identité, bien que $P$ ait trois racines distinctes.\\Noter cependant qu'il existe trois $\mathbb{Q}$-isomorphismes distincts de $\mathbb{Q}(\sqrt[3]{2})$ dans $\mathbb{C}$, ce qui fournit les trois corps distincts : $\mathbb{Q}(\sqrt[3]{2})$, $\mathbb{Q}(j\sqrt[3]{2})$ et $\mathbb{Q}(j^2\sqrt[3]{2})$.
+	\end{itemize}
+\end{example}
+\begin{lemma}\label{Lem corps fixes}
+	\begin{itemize}
+		\item (i) Soit $L/K$ une extension galoisienne de groupe de Galois $G$, et soit $K'=L^G$; alors $K'=K$.
+		\item (ii) si $F/K$ est une sous-extension de $L/K$, alors $L/F$ est une extension galoisienne et:
+		\begin{equation}
+			Gal(L/F)=\left\lbrace \sigma \in G,\,\sigma(x)=x\,pour\,tout\,x\in F\right\rbrace
+		\end{equation}
+	\end{itemize}
+\end{lemma}
+\begin{proof}
+	(i) On a $K\subseteq K$ puisque les éléments de $G$ sont des $K$-automorphismes. Soit alors $\sigma\in G$ ; on constate que la restriction de $\sigma$ à $K'$ est l'identité (utiliser la définition de $K'$), donc tout élément de $G$ est un $K'$-automorphisme de $L$, d'où $Gal(L/K)\subseteq Gal(L/K')$, ce qui conduit Ã  $[L/K]\leq[L/K']$ ; d'où $K'=K$ d'après un raisonnement classique sur le degré lorsque $K\subseteq K'\subseteq L$
+\end{proof}
+\section{Corps fixes, lemme d'artin}
+
+\subsection{Lemme d'Artin}
+\begin{lemma} \label{LemArtin}
+	(d'Artin)$-$ Soit $K$ un corps et soit $H$ un groupe fini d'automorphismes de $K$ ; alors l'extension $K/K^H$ est une extension finie galoisienne et $Gal(K/K^H)=H$.
+\end{lemma}
+\begin{proof}
+(\textbf{Voir Georges Gras --- Marie - Nicole Gras. Algèbre et arithmétique fondamentale. Page [318] })
+	
+\end{proof}
+
+Le premier énoncé fondamentale est le suivant.
+\begin{theorem} \label{Th1CG}
+	(Correspondance de Galois). Soit $L/K$ une extension finie galoisienne et soit $G=Gal(L/K)$. Il existe une correspondance canonique bijective, entre l'ensemble des sous-extension $F/K$ et $L/K$ et les sous-groupes $H$ de $G$ ainsi définie:
+	\begin{equation*}
+		H \mapsto F:=L^H
+	\end{equation*}
+	la correspondance inverse est donné (pour $K\subseteq F\subseteq L$) par:
+	\begin{equation*}
+		F \mapsto H:=Gal(L/F)
+	\end{equation*}
+\end{theorem}
+\begin{proof}
+(\textbf{Voir Georges Gras --- Marie - Nicole Gras. Algèbre et arithmétique fondamentale. Page [320] })
+	\end{proof}
+\begin{example}
+	Prenons $K=\mathbb{Q}$ et pour $L$ le corps des racine de $X^3-2$ dans $\mathbb{C}$. On a déjà  construit $G=Gal(L/\mathbb{Q})=\left\lbrace id_K, \sigma, \tau\right\rbrace$ avec:
+	\begin{equation*}
+		\sigma \begin{cases*}
+			\sqrt[3]{2} \mapsto j\sqrt[3]{2}\\
+			j \mapsto j
+		\end{cases*}
+		\text{et\;}
+		\tau \begin{cases*}
+			\sqrt[3]{2} \mapsto j\sqrt[3]{2}\\
+			j \mapsto j
+		\end{cases*}
+	\end{equation*}
+	Il en résulte facilement que $G\simeq S_3=D_6$, dont les sous-groupes sont les suivants dont les sous-groupes sont les suivant (outre les deux sous-groupes évidents):
+	\begin{equation*}
+		\left\lbrace id, \tau\right\rbrace, \left\lbrace id, \sigma\tau\right\rbrace,  \left\lbrace id, \sigma^2\tau\right\rbrace \text{d'ordre 2}, \left\lbrace id, \sigma, \sigma^2\right\rbrace \text{d'ordre 3.}
+	\end{equation*}
+	Ceci conduit donc déjÃ  Ã  l'existence de quatre sous-corps distincts (autres que $\mathbb{Q}$ et $L$ qui correspond aux sous-groupes $G$ et $\left\lbrace e \right\rbrace $):
+	\begin{enumerate}
+		\item $K_1$, $K_3$, $K_3$ (correspondants aux trois sous-groupes d'ordre 2 et pour lesquels $\left[ L/K_i\right]=2$, donc $\left[ K_i/\mathbb{Q}\right]=3$),
+		\item $K$ correspond au sous-groupe pour lequel on a $\left[L/K\right]=3$ et $\left[K/\mathbb{Q}\right]=2$
+	\end{enumerate}
+\end{example}
+Dans l'exemple précédent le diagramme des sous-corps de $L$ peut s'établir alors sans difficulté ; cependant on voit que dans un cas plus compliqué il est utile de préciser les inclusions ; or ceci résulte en fait de \ref{Th1CG} qui contient le résultat plus précis suivant.
+\begin{corollary} \label{corolaire CG}
+	Soit $L/K$ une extension galoisienne finie de groupe de Galois $G$ ; la correspondance de Galois
+	$$
+	F \mapsto Gal(L/F) \hspace*{5mm} (K\subseteq F\subseteq L)\text{,}
+	$$
+	de l'ensemble des sous-extension $L/K$ dans l'ensemble des sous-groupes de $Gal(L/K)$, a les propriétés de décroissance suivantes (pour l'inclusion)
+	\begin{enumerate}
+		\item $F_1 \subseteq F_2 \iff Gal(L/F_1) \supseteq Gal(L/F_2)$
+		\item $Gal(L/F_1F_2)=Gal(L/F_1) \cap Gal(L/F_2)$
+		\item $Gal(L/F_1 \cap F_2)=\left\langle Gal(L/F_1),Gal(L/F_2)\right\rangle $
+	\end{enumerate}
+\end{corollary}
+\begin{proof}
+	On a
+	\begin{equation*}
+		F_1\subseteq F_2 \Longrightarrow Gal(L/F_1) \subseteq Gal(L/F_2)
+	\end{equation*}
+	(par définition de $F_i$-automorphisme, $i=1,2$), puis:
+	\begin{equation*}
+		Gal(L/F_1) \subseteq Gal(L/F_2) \Longrightarrow L^{Gal(L/F_1)} \subseteq L^{Gal(L/F_2)}
+	\end{equation*}
+	(Par la définition \ref{Corps fixe}), d'où $F_1\subseteq F_2$. D'où le point $1.$
+	Le point $2.$ est également immédiat en vérifiant chaque inclusion.
+	Pour le point $3.$, soit $H$ un sous-groupe de $G$ contenant $H_1=Gal(L/F_1)$ et $H_2=Gal(L/F_2)$, et soit $F$ le corps fixe par $H$. On a donc (point précédents) $F\subseteq F_1$ et $F\subseteq F_2$ ; ainsi $F\subseteq F_1 \cap F_2$, d'où $Gal(L/F_1\cap F_2)\subseteq H$. En passant Ã  l'intersection sur les $H$ (contenant $H_1$ et $H_2$), on obtient :
+	\begin{equation}
+		\large{Gal(L/F_1\cap F_2)\subseteq \bigcap_{H\supseteq H_1, H_2} H=\left\langle H_1,H_2\right\rangle }
+	\end{equation}
+	Réciproquement si $\sigma\in \left\langle H_1,H_2\right\rangle$, il est claire, en utilisant le théorème sur les sous-groupes engendrés par une partie, que $\sigma$ laisse fixe les éléments de $F_1\cap F_2$ ; on a donc $\left\langle H_1,H_2\right\rangle \subseteq Gal(L/F_1\cap F_2)$, d'où l'égalité.
+\end{proof}
+Enfin, une fois le treillis des sous-extensions $F/K$ de $L/K$ établi, on peut se demander quelles extensions $F/K$ sont galoisiennes ; on a Ã  ce sujet le deuxième énoncés fondamental suivant :
+\begin{theorem} \label{Th2CG}
+	Soit $L/K$ une extension finie galoisienne de groupe de Galois $G$, soit $F$ une sous-extension de $L/K$, et soit $H=Gal(L/F)$. Une condition nécessaire et suffisante pour que $F/K$ soit galoisienne est que $H$ soit normal dans $G$. Lorsque ceci a lieu, on a $Gal(F/K)\simeq G/H$, isomorphisme canonique qui résulte de la factorisation de l'homomorphisme de restriction
+	\begin{equation}
+		\begin{array}{r c l}
+			G & \longrightarrow &Gal(F/K)\\
+			\sigma & \mapsto & \sigma_{|F}
+		\end{array}
+	\end{equation}
+	Dont le noyau est $H$.
+\end{theorem}
+
+\begin{proof}
+	(\textbf{Voir Georges Gras --- Marie - Nicole Gras. Algèbre et arithmétique fondamentale. Page [323] })
+\end{proof}
+\begin{example}
+	Dans le treillis des sous extensions de $\mathbb{Q}(\sqrt[3]{2},j)/\mathbb{Q}$, on obtient pour seule extension galoisienne (autre que $\mathbb{Q}/\mathbb{Q}$ et $\mathbb{Q}(\sqrt[3]{2},j)/\mathbb{Q}$) celle qui correspond au seul sous-groupe normale (stricte et non trivial) de $D_6$, le groupe $\left\lbrace id, \sigma, \sigma^2\right\rbrace$ : 
+\end{example}
+\begin{figure}[!h]
+\begin{center}
+		\begin{equation*}
+		\xymatrix {
+			&& \mathbb{Q}(\sqrt[3]{2}, j)\\
+			\mathbb{Q}(\sqrt[3]{2}) \ar @{-} [rru]_2 \ar @{-} [rrdddd]_3\\
+			&\mathbb{Q}(j\sqrt[3]{2}) \ar @{-} [ruu]_2 \ar @{-} [rddd]_3\\
+			&&& \mathbb{Q}(j^2\sqrt[3]{2}) \ar @{-} [luuu]_2 \ar @{-} [ldd]_3\\
+			&&&& \mathbb{Q}(j) \ar @{-} [lluuuu]_3 \ar @{-} [lld]_2\\
+			&& \mathbb{Q}\\
+		}
+	\end{equation*}
+\end{center}
+\caption{Sous-extensions de $\mathbb{Q}(\sqrt[3]{2},j)/\mathbb{Q}$}
+\end{figure}
+\begin{figure}[!t]
+	\begin{center}
+		\begin{equation*}
+			\xymatrix{
+				&& \left\lbrace id \right\rbrace \\
+				\left\lbrace id, \tau \right\rbrace \ar @{-} [rru] \ar @{-} [rrdddd]\\
+				&\left\lbrace id, \sigma\tau \right\rbrace \ar @{-} [ruu] \ar @{-} [rddd]\\
+				&&& \left\lbrace id, \sigma^2\tau \right\rbrace \ar @{-} [luuu] \ar @{-} [ldd]\\
+				&&&& \left\lbrace id, \sigma, \sigma^2\right\rbrace \ar @{-} [lluuuu] \ar @{-} [lld]\\
+				&& G=\left\langle \sigma, \tau \right\rangle
+			}
+		\end{equation*}
+	\end{center}
+	\caption{Les sous-groupes de groupe de Galois de l'extensions $\mathbb{Q}(\sqrt[3]{2},j)/\mathbb{Q}$}
+\end{figure}
+\newpage
+\begin{theorem} \label{Th3CG} 
+	Soit $L/K$ et $F/K$ deux sous-extensions, finies, galoisiennes, de $\overline{K}/K$. Posons successivement $G=Gal(LF/K)$, $H_F=Gal(LF/F)$ et $H_L=Gal(LF/L)$. Alors $F\cap L/K$ et galoisienne et on a
+	\begin{equation}
+		Gal(L\cap F/ K)\simeq G/H_LH_F
+	\end{equation}
+\end{theorem}
+\begin{proof}
+	Puisque $L/K$ et $F/K$ sont galoisiennes, $H_L$ et $H_F$ sont des sous-groupes normaux de $G$. $\left\langle H_L,H_F\right\rangle = H_LH_F$ est normal dans $G$ ; d'où le résultat par le 3. du corollaire \ref{corolaire CG}.
+\end{proof}
+\begin{theorem} \label{Th4CG}
+	Soit $K$ un corps, et soient $L$ et $L'$ deux sous-extensions d'une extension non nécessairement algébrique de $K$. On suppose que $L/ L\cap L'$ est finie galoisienne.\\ Alors l'extension $LL'/ L'$ est finie galoisienne, et l'application :
+	\begin{equation}
+		\xymatrix{
+			Gal(LL'/L') & \longrightarrow & Gal(L/ L\cap L')\\
+			\sigma &\mapsto &\sigma_{|L}\\
+		}
+	\end{equation}
+	est isomorphisme canonique de groupes.
+\end{theorem}
+\begin{proof}
+	L'application écrite a un sens, car si $\sigma$ est un $L'$-automorphisme de $LL'$, par restriction à  $L$, il laisse fixe $L\,\cap\, L'$. Si $\sigma_{|L}$ est l'identité, c'est que $\sigma$ est l'identité sur $L$ et $L'$, donc sur $LL'$, d'où l'injectivité, $L$ et $L'$ sont linéairement disjointes sur $L\,\cap \,L'$, d'où : $$\left[ LL'/L'\right] = \left[ LL/L\,\cap\,L'\right]$$ ainsi le fait que l'application étudiée soit injective suffit Ã  prouver qu'elle est surjective.\\
+	Ce qui précède donne lieu au schéma suivant :
+	\begin{equation}
+		\xymatrix{
+			&LL'\ar @{-}[d]\\
+			L\ar @{-}[ru] \ar @{-}[d] & L'\\
+			L\,\cap \, L' \ar @{-} [ru] \ar @{-} [d]\\
+			K
+		}
+	\end{equation}
+	dans lequel on a $Gal(LL'/L')\,\simeq\, Gal(L/L\,\cap \, L')$ par restriction.
+\end{proof}
+\begin{theorem}\label{Th5CG}
+	Soient $F$ et $L$ des sous-extensions de $\overline{K}/K$, galoisienne sur $F\,\cap\,L$. L'application canonique :
+	\begin{equation}
+		\xymatrix{
+			Gal(FL/F\,\cap \, L) & \longrightarrow & Gal(F/F\,\cap \, L) \times Gal(L/F\,\cap \, L)\\
+			\sigma & \mapsto & (\sigma_{|F}\,,\,\sigma_{|L})
+		}
+	\end{equation}
+	est un isomorphisme canonique de groupe.
+\end{theorem}
+\begin{proof}
+	On sait que $FL/F\cap L$ est galoisienne ; comme les extensions $F/F\,\cap \, L$ et $L/F\,\cap \, L$ sont linéairement disjointes, on a $\left[ FL/F\cap L \right]=\left[ F/F\cap L \right]\left[ L/F\cap L \right]$ et il suffit de montrer l'injectivité.\\
+	Le schéma est alors le suivant, les branches parallèles correspondant Ã  des groupes de Galois isomorphes (c'est le théorème \ref{Th4CG} appliqué deux fois), et où le groupe $Gal(FL/F\,\cap \, L)$ peut aussi s'écrire $Gal(FL/F) \times Gal(FL/L)$ :
+	\begin{equation*}
+		\xymatrix{
+			&FL\ar @{-}[d]\\
+			F\ar @{-}[ru] \ar @{-}[d] & L\\
+			F\,\cap \, L \ar @{-} [ru] \ar @{-} [d]\\
+			K
+		}
+	\end{equation*}
+	\textbf{Attention} $F\,\cap \, L/K$ n'est pas nécessairement galoisienne car les hypothèses sont plus faibles qu'en théorème \ref{Th3CG}.
+\end{proof}
+\section{Groupe de Galois des polynômes}
+\subsection{Norme et trace}
+Soit $L/K$ une extension de degré fini $n = [L / K]$, pour tout $\lambda$ dans $L$ on définit l'application noté $M_\lambda$ définie par
+\begin{equation*}
+	\begin{array}{r c l}
+		M_\lambda : L & \to & L \\
+		x & \mapsto & \lambda x
+	\end{array}
+\end{equation*}
+$M_\lambda$ définie ainsi un endomorphisme d'espace vectoriel $L$, on l'appelle endomorphisme multiplication par $\lambda$.
+\begin{definition}
+	On appelle trace, respectivement norme, d'un élément $\lambda$ de $L$, noté $Tr_{L/K}(\lambda)$, respectivement $N_{L/K}(\lambda)$, la trace et le déterminant de l'endomorphisme $M_\lambda$. On écrit alors
+	\begin{equation*}
+		Tr_{L/K}(\lambda) = Tr(M_\lambda) \; et \; N_{L/K}(\lambda) = Det(M_\lambda).
+	\end{equation*}
+\end{definition}
+\begin{example}
+	Soit l'extension $L/K$, où $K = \mathbb{Q}$ et $L = \mathbb{Q}(\sqrt[3]{2})$, on veut déterminer la trace et la norme de l'élément $\lambda = \sqrt[3]{2}$. on sait que la famille $\left\lbrace 1 , \sqrt[3]{2} , \sqrt[3]{2^2}\right\rbrace = \mathbf{F}$, forme une base de $L$ comme $K$-espace vectoriel, alors l'image de chacun des éléments de cette base par endomorphisme multiplication par $\lambda$ est
+	\begin{equation*}
+		M_\lambda(1) = \lambda 1 = \sqrt[3]{2} \;, M_\lambda(\sqrt[3]{2}) = \lambda \sqrt[3]{2} = \sqrt[3]{2^2} \;, M_\lambda(\sqrt[3]{2^2}) = \lambda \sqrt[3]{2^2} = 2
+	\end{equation*}
+	Ainsi la matrice associée a l'endomorphisme $M_\lambda$ relativement a la base $\mathbf{F}$ est
+	\begin{equation*}
+		\begin{pmatrix}
+			0 & 0 & 2 \\ 1 & 0 & 0 \\ 0 & 1 & 0
+		\end{pmatrix}
+	\end{equation*}
+	Ce qui donne $$Tr_{L/K}(\lambda) = 0 \; et \; N_{L/K}(\lambda) = 2$$
+\end{example}
+\begin{lemma}
+	$L/K$ est une extension finie de degré $n$, alors
+	\begin{itemize}
+		\item Soit $x$ et $y$ dans $L$, alors $Tr_{L/K}(x + y) = Tr_{L/K}(x)+Tr_{L/K}(y)$ et $N_{L/K}(xy) = N_{L/K}(x)N_{L/K}(y)$.
+		\item si $a \in K$, alors $Tr_{L/K}(a) = na$ et $N_{L/K}(a) = a^n$ sont dans $K$.
+	\end{itemize}
+\end{lemma}
+\begin{proposition}
+	$L/K$ est une extension finie de degré $n$, pour $\alpha$ dans $L$ notons
+	\begin{equation*}
+		p(X) = X^m + a_{m-1}X^{m-1} + \ldots + a_1X + a_0 \in K [X].
+	\end{equation*}
+	Son polynôme minimal, alors $N_{L/K}(\alpha) = (-1)^na_0^{nm}$ et $Tr_{L/K}(\al) = - \frac{n}{m}a_{m-1}$.
+\end{proposition}
+\begin{proof}
+	Par hypothèse $[K(\al) / K] = m$, $K[\al] \subseteq L$ donc $m$ divise $n = [L / K]$. \\
+	On considère l'endomorphisme $M_\al$, on note $g(X)$ le polynôme caractéristique de $M_\al$, soit
+	$$g(X) = X^n + b_{n-1}X^{n-1} + \ldots + b_1X + b_0 \in K [X] $$  \\
+	$g(X)$ et $p(X)$, on le même facteur irréductible donc $g(X)$ est une puissance du polynôme minimal de $\alpha$, ce qui donne $$g(X) = (p(X))^{nm}.$$
+	Comme $N_{L/K}(\al) = Det(M_\al) = (-1)^nb_0$ et $Tr_{L/K}(\al) = -b_{n-1}$, on retient que $g(X) = (p(X))^{n/m}$, on aura $$b_0 = a_0^{nm} \; et \; b_{n-1} = \frac{n}{m}a_{m-1}$$.
+\end{proof}
+\begin{corollary}
+	$L/K$ est une extension finie de degré $n$, pour $\alpha$ dans $L$ notons par $\sigma_i; \, 1 \leq i \leq r$, les $r$ $K$-homomorphisme de $K(\al)$ dans
+	une clôture algébrique de $K$, alors
+	\begin{equation*}
+		N_{L/K}(\al) = \left( \prod_{i = 1}^{r} \sigma_i(\al)\right) ^{n/r} \: et \: Tr_{L/K}(\al) = \dfrac{n}{r} \left( \sum_{i = 1}^{r} \sigma_i(\al) \right) .
+	\end{equation*}
+\end{corollary}
+\begin{proof}
+	Soit $\Omega$ une clôture algébrique de $K$, alors le polynôme minimal de tout $\alpha$ dans $L$ est
+	\begin{equation*}
+		p(X) = \prod_{i=1}^{r} (X - \sigma_i(\al)) \in K[X].
+	\end{equation*}
+	où les $\sigma_i(\al)$ dans $\Omega$, on sait que le polynôme caractéristique $$g(X) = X^n + b_{n-1}X^{n-1} + \ldots + b_1X + b_0 \in K [X] $$
+	de l'endomorphisme $M_\al$ est lié au polynôme minimal $p(X)$ par la relation $g(X) = (p(X))^{n/r}$. \\
+	D'autre parte $$N_{L/K}(\al) = (-1)^nb_0 \; et \; Tr_{L/K}(\al) = -b_{n-1}.$$
+	Avec $$b_0 = \prod_{i = 1}^{r} \sigma_i(\al) \; et \; b_{n-1} = \dfrac{n}{r} \left( \sum_{i = 1}^{r} \sigma_i(\al) \right).$$
+\end{proof}
+\begin{corollary}
+	Soit $L/K$ une extension galoisienne de groupe de Galois $G = Gal(L / K)$, alors pour tout $\alpha \in L$ on a
+	\begin{equation*}
+		N_{L/K}(\al) = \prod_{\sigma \in G} \sigma(\al) \; et \; Tr_{L/K}(\al) = \sum_{\sigma \in G} \sigma(\al).
+	\end{equation*}
+\end{corollary}
+\subsection{Discriminant}
+\begin{definition}
+	Soit $L/K$ une extension finie de corps séparable de degré $n$, on appelle discriminant d'une famille finie $\left( \al_i \right)_{1 \leq i \leq n},$ d'élément de $L$.\\
+	L'élément de $L$ noté $D_{L/K}(\al_1,\ldots,\al_n) = (Det(\sigma_i(\al_j)))^{2} \,, 1 \leq j \leq n$, où les $\sigma_i$ sont les $n$ plongement de $L$ dans une clôture algébrique de $K$.
+\end{definition}
+\begin{remark}
+	$$D_{L/K}(\al_1,\ldots,\al_n) = (Det(Tr_{L/K}\al_i\al_j) \; et \; D_{L/K}(\al_1,\ldots,\al_n) \in K.$$
+\end{remark}
+\begin{proposition}
+	Soit $L/K$ une extension finie de corps séparable de degré $n$, si $L = K(\al),$ alors
+	\begin{equation*}
+		D_{L/K}(1,\al,\ldots,\al^{n-1}) = (-1)^{n(n-1)/2} \prod_{j \ne i} (\sigma_i(\al) - \sigma_j(\al)) = (-1)^{n(n-1)/2} N_{L/K}(p'(\al)).
+	\end{equation*}
+	où les $\sigma_i :\; 1 \leq i \leq n,$ sont les $n$ plongements de $L$ dans une clôture algébrique $\Omega$ et $p'$ le polynôme dérivé du polynôme minimal $p$ de $\alpha$.
+\end{proposition}
+\begin{proof}
+	On a bien $$D_{L/K}(1,\al,\ldots,\al^{n-1}) = (Det(\sigma_i(\al^j)))^2.$$ D'autre part $\sigma_i(\al^j) = \sigma_i(\al)^j$ et que la matrice $\left( \sigma_i(\al)^j\right)$ est une matrice de "Vandermonde" de $n$-uplet $\sigma_1(\al),\ldots,\sigma_n(\al)$ dont le déterminant est $\prod_{i < j}(\sigma_i(\al) - \sigma_j(\al))$ de qui donne
+	\begin{equation*}
+		D_{L/K}(1,\al,\ldots,\al^{n-1}) = \left( \prod_{i < j}(\sigma_i(\al) - \sigma_j(\al))\right) ^2.
+	\end{equation*}
+	Chaque différence $\sigma_i(\al) - \sigma_j(\al)$ est associée a un couple $(\sigma_i(\al),\sigma_j(\al))$; donc on trouve\\
+	$n(n-1)/2$ de ces différences
+	dans le produit $\prod_{i < j}(\sigma_i(\al) - \sigma_j(\al))$ et donc $n(n-1)$ de ces différences dans $$\left( \prod_{i < j}(\sigma_i(\al) - \sigma_j(\al))\right) ^2$$, on trouve le même résultat dans $\prod_{i \ne j}(\sigma_i(\al) - \sigma_j(\al))$; ainsi, on a bien
+	\begin{equation*}
+		D_{L/K}(1,\al,\ldots,\al^{n-1}) = \left( \prod_{i \ne j}(\sigma_i(\al) - \sigma_j(\al))\right).
+	\end{equation*}
+	D'autre part, on a $p = \prod_{i = 1}{n}(X-\sigma_i(\al)),$ alors le polynôme dérivé $p'$ s'écrit
+	\begin{equation*}
+		p'(X) = \sum_{j=1}^{n}\prod_{i \ne j}(X-\sigma_i(\al)).
+	\end{equation*}
+	Ce qui entraine $\forall i, \, 1 \leq i \leq n$, on a
+	\begin{equation*}
+		\sigma_i(p'(\al)) = p'(\sigma_j(\al)) = \prod_{i \ne j}(\sigma_i(\al) - \sigma_j(\al)).
+	\end{equation*}
+	Donc $p'(\al)$ s'écrit comme suite
+	\begin{equation*}
+		N_{L/K}(p'(\al)) = \prod_{i = 1}^{n}\sigma_i(p'(\al)) = \prod_{i \ne j}(\sigma_i(\al)-\sigma_j(\al)).
+	\end{equation*}
+	On en déduit alors
+	\begin{equation*}
+		D_{L/K}(1,\al,\ldots,\al^{n-1}) = (-1)^{n(n-1)/2} N_{L/K}(p'(\al)).
+	\end{equation*}
+\end{proof}
+\begin{definition}
+	Soit $K$ un corps de caractéristique différente de $2$, $p(x) \in K[X]$ un polynôme de degré $n$, ayant $n$ racines distinctes $\left( \al_i\right)_{1\leq i \leq n}$ dans une clôture algébrique $\Omega$ de $K$. On appelle discriminant de $p$, l'élément noté $D_p$ de $\Omega$ défini par
+	\begin{equation*}
+		D_p = \left( \prod_{1 \leq i \leq j \leq n}(\al_i - \al_j)\right)^2
+	\end{equation*}
+	On note $D_p = \Delta^2$, où $\Delta = \left( \prod_{1 \leq i \leq j \leq n}(\al_i - \al_j)\right) $.
+\end{definition}
+\begin{remark}
+	Le discriminant $D_p$ du polynôme $p$ est un élément de $K$.
+\end{remark}
+\begin{example}\label{exempledis}
+	Soit $K$ un corps, avec $car \, K \ne \left\lbrace  2 , 3 \right\rbrace $, soit $\chi(X) = X^3 + pX + q \in K[X]$ un polynôme irréductible sur $K$, on note $\alpha$ une racine de $\chi(X)$ et soit $L = K(\al)$, donc le discriminant de $\chi$ est
+	\begin{equation*}
+		D_\chi = -N_{L/K}(\chi'(\al))
+	\end{equation*}
+	avec $\chi'(\al) = 3\al^2 + p$ et tel que $\alpha^3 + p\al + q = 0$. \\
+	On sait que $N_{L/K}(\chi'(\al))$ est le déterminant de la matrice de l'endomorphisme $M_{\chi'(\al)}$, multiplication par $\chi'(\al)$, de $L$ dans la base est $\left\lbrace 1,\al,\al^2 \right\rbrace $ du $K$ espace vectoriel $L$ on a donc
+	\begin{equation*}
+		M_{\chi'(\al)}(1) = p + 3\al^2, \; M_{\chi'(\al)}(\al) = -3q - 2p\al, \; M_{\chi'(\al)}(\al^2) = 3\al - 2p\al^2.
+	\end{equation*}
+	D'où la matrice suivante
+	\begin{equation*}
+		\begin{pmatrix}
+			p & -3q & 0 \\
+			0 & -2p & -3q \\
+			3 &  0  & -2p
+		\end{pmatrix}
+	\end{equation*}
+	dont le déterminant est $4p^3 + 27q^2$, on en déduit que $D_\chi = -(4p^3 +27q^2)$
+\end{example}
+\subsection{Cas particuliers}
+\subsubsection{Polynôme de degré 3}
+\textbf{Transformation ($X^3 + pX + q$)} :
+Soit $K$ un corps de caractéristique différent de $2$ et $3$, $a,b,c \in K$, on cherche a ramené le polynôme $t(X) = X^3 + aX^2 + bX + c \in K[X]$ a un polynôme
+de la forme $t_1(Y) = Y^3 + pY + q ; \: p,q \in K$ et $t_1(Y) \in K[Y]$.\\
+Pour cela, on pose $X = Y + h$, alors on a
+\begin{equation*}
+	t(X) = t(Y + h) = Y^3 + 3Yh(Y + h) + h^3 + a(Y^2 + 2Yh + h^2) + b(Y+h) + c.
+\end{equation*}
+Donc on aura
+\begin{equation*}
+	t(X) = Y^3 + (a+3h)Y^2 + (3h^2+2ah+b)Y + (h^3+ah^2+bh+c).
+\end{equation*}
+Par suite, posons $h = -a/3$, on obtient donc $t(X) = t_1(Y) = Y^3 + pY +q$.\\
+Or d'après l'exemple \ref{exempledis}, le $D_{t_1} = -(4p^3 + 27q^2)$, de plus on a $D_t = D_{t_1} = -(4p^3 + 27q^2)$.
+\textbf{Formule générale :} Soit $p,q,r \in K$, posons $p(X) =  X^3 + pX^2 + qX + r \in K[X]$,alors
+\begin{equation*}
+	D_p = 18pqr - 4p^3r + p^2q^2 - 4r^3 - 27q^2 .
+\end{equation*}
+\subsubsection{Polynôme de degré 4}
+\textbf{Transformation (méthode de Ferrari) :}
+Soit $K$ un corps de caractéristique différent de $2$ et $3$, $a_1,a_2,a_3,a_4 \in K$, $g(X) = X^4 - a_1X^3 + a_2X^2 - a_3X + a_4$.\\
+On pose $Y = X - \frac{s_1}{4}$, (transformation de Tschirnhaus), $g(X)$ devient $f(Y) = Y^4 + pY^2 + qY + r , \, p,q,r \in K$.\\
+La méthode consiste a mettre $f$ sous la forme : $f(Y) = (Y^2 + uY + v)(Y^2 + u'Y + v')$, on suppose que $q \ne 0$ (car sinon on aura une équation bicarré).\\
+Par suite l'identification nous donne le système :
+\begin{equation*}
+	\left\lbrace \begin{array}{r c l}
+		u + u' & = & 0 \\
+		uu'+ v+ v' &=& p \\
+		uv' + u'v & = & q \\
+		vv' & = & r
+	\end{array} \right.
+	\iff
+	\left\lbrace \begin{array}{r c l}
+		u' & = & u \\
+		v+ v' &=& p+ u^2 \\
+		v + v' & = & \dfrac{q}{u} \\
+		vv' & = & r
+	\end{array} \right.
+\end{equation*}
+Donc, on en déduit que
+\begin{equation*}
+	\left\lbrace 	\begin{array}{r c l}
+		v & = & (\frac{1}{2u}) \left( u(p+u^2) - q \right) \\
+		v' & = & ( \frac{1}{2u}) \left( u(p+u^2) + q \right).
+	\end{array} \right.
+\end{equation*}
+Par suite $vv' = r$ donne $$u^2(u^2+p)^2 - q^2 = 4ru^2.$$
+On pose $z = u^2 +p$, on en déduit que $z$ est racine de l'équation du troisième degré
+\begin{equation}\label{E1}
+	Z^3 - pZ^2 - 4rZ + 4rp - q^2.
+\end{equation}
+L'équation \eqref{E1} est dite cubique résolvante de l'équation
+\begin{equation}\label{E2}
+	Y^4 + pY^2 + qY + r = 0.
+\end{equation}
+la résolution de \eqref{E1} donne $z$ et donc $u$ et par suite $v$ et $v'$. \\
+L'équation \eqref{E2} est donc ramenée Ã  la résolution du système suivant
+\begin{equation*}
+	\left\lbrace 	\begin{array}{r c l}
+		(E_1) \; Y^2 + uY + v &= &0 \\
+		(E_2) \; Y^2 + u'Y + v' &= & 0
+	\end{array} \right.
+	\longmapsto
+	\left\lbrace 	\begin{array}{r c l}
+		D_{(E_1)}  & = & u^2 - 4v \\
+		D_{(E_2)} &= & u'^2 - 4v'.
+	\end{array} \right.
+\end{equation*}
+\textbf{Formules connues : } Soit $p,q,r,t \in K$, on pose $p(X) = X^4 + pX + q$ et $f(X) = X^4 + rX^2 + t$, alors
+\begin{equation*}
+	\begin{array} {r c l}
+		D_p &=& -27p^4 + 256q^3 \\
+		D_f &=& 16t(r^2 - 4t)^2
+	\end{array}
+\end{equation*}
+\subsubsection{Polynôme de degré n ($\mathbf{X^n + pX + q}$) : }
+Soit $p(X) = X^n + aX +b , \, a,b \in K$, soit $\al := \al_1,\al_2,\ldots,\al_n$ ses $n$ racines distinctes dans une clôture algébrique de $K$, on note que $$p(X) = \prod_{i=1}^{n} (X - \al_i) $$ \\
+Posons $p(\al_i) = \al_i^n + a\al_i + b$, on a $p(\al_i) = 0, \; \forall 1 \leq i \leq n$, donc $$\al_i^n + a\al_i + b = 0 \iff \al_i^n = -a\al_i - b$$
+Donc si $p'$ désigne le polynôme dérivé de $p$ alors on a, $$p'(\al_i) = n\al_i^{n-1} + a = n(\frac{\al_i^n}{\al_i}) + a = \dfrac{n(-a\al_i -b) + a\al_i}{\al_i} = \dfrac{(1-n)a\al_i - nb}{\al_i}.$$
+Soit \begin{equation}\label{equationt}
+	N(p'(\al_i)) =\prod_{i = 1}^{n} p'(\al_i) = \prod_{i = 1}^{n} \dfrac{(1-n)a\al_i - nb}{\al_i} = \dfrac{\prod_{i = 1}^{n} (1-n)a\al_i - nb }{\prod_{i = 1}^{n} \al_i}  .
+\end{equation}
+Pour venir about de ce calcul on considère l'égalité suivante $$(1-n)a\al_i - nb = a(1-n)\al_i -nb = -a(1-n)(\frac{nb}{a(1-n)}-\al_i)$$on pose alors $q = \dfrac{nb}{a(1-n)}$ et on remplace dans l'équation \ref{equationt}, on a donc
+\begin{equation*}
+	\dfrac{\prod_{i = 1}^{n} (1-n)a\al_i - nb }{\prod_{i = 1}^{n} \al_i} = \dfrac{(-1)^n a^n (1-n)^n \prod_{i = 1}^{n} (q-\al_i) }{\prod_{i = 1}^{n} \al_i} =
+	\dfrac{(-1)^n a^n (1-n)^n p(q) }{(-1)^nb} = \dfrac{a^n (1-n)^n p(q) }{b}.
+\end{equation*}
+On pose $t = \dfrac{a^n(1-n)^n}{b}$ donc on a bien $$ N(p'(\al_i)) = tf(q)$$.\\
+Sachant que $D_p = (-1)^{\frac{n(n+1)}{2}}N(p'(\al_i))$ donc le discriminant de $p$ est donné par $$(-1)^{\frac{n(n+1)}{2}}\left( tf(q)\right) , \; avec \;t = \dfrac{a^n(1-n)^n}{b}, \; et \; q = \dfrac{nb}{a(1-n)} $$
+\begin{example}
+	Soit $p(X) = X^5 + 5X + 1 \in \mathbb{Q}[X]$, le discriminant de $p$ d'après le résultat précédent est donné par
+	\begin{equation*}
+		D_p = (-1)^{\frac{5(5+1)}{2}}(\frac{5^5(1-5)^5}{1})p(\dfrac{5}{5(1-5)}) = 5^5 + 5^6(-4)^4 -5^5(4)^5 = 800005.
+	\end{equation*}
+\end{example}
+
+
+\subsection{Groupe de Galois d'un polynôme}
+\begin{definition}
+	Pour Tout polynôme $P(X) \in K[X]$, séparable sur $K$, et de corps de décomposition $L$ sur $K$, le groupe de Galois du polynôme $P$, noté
+	$Gal(P/K)$ est le groupe de Galois $G = Gal(L / K)$ de l'extension galoisienne $L/K$.
+\end{definition}
+Notons que si $P(X) \in K[X]$ un polynôme irréductible sur $K$ de degré $n$ de groupe de Galois $G$, alors pour tout $\sigma \in G$, et pour tout racine $\alpha$ de $P(X)$, l'élément $\sigma(\al)$ est aussi racine de $P(X)$, En d'autre terme, si on a $\alpha$,$\beta$ deux racines de $P(X)$, $\exists \sigma \in G$ tel $\sigma(\al) = \beta.$ On dira que $\sigma$ agit sur les racines du polynôme $P(X)$ par permutation de celles-ci et cette action est dite transitive.
+\begin{definition}
+	On dit qu'un sous-groupe de $G$ de permutation du groupe $S_n$ est transitif si, $$\forall i \ne j ; \; 1 \leq i , j \leq n, \exists \sigma \in G ; \; \sigma(i) =j.$$
+\end{definition}
+\begin{theorem}\label{thoreme3}
+	Soit $p(X) \in K[X]$ un polynôme de degré $n$ et de groupe de Galois $G$ alors
+	\begin{enumerate}
+		\item $G$ peut être identifié à sous-groupes du groupe symétrique $S_n$.
+		\item Si $p(X)$ irréductible, alors $n \mid |G|$ et $G$ est isomorphe à un sous-groupe transitif de $S_n$.
+	\end{enumerate}
+\end{theorem}
+\begin{proof}
+	Notons par $\al := \al_1,\ldots,\al_n$ les différentes racines de $p(X)$ dans un corps de décomposition $L$ de celui-ci, $deg \, p \geq n \geq 1$.
+	\begin{enumerate}
+		\item Tout $\sigma \in G$ induit une permutation de l'ensemble $\left\lbrace \al_1,\ldots,\al_n \right\rbrace $ des racines de $p(X)$, ce qui définit un homomorphisme $\varPhi : G \to S_n$ qui est injectif, ainsi donc $G \simeq Im\varPhi$ sous-groupes de $S_n$.
+		\item Si $p(X)$ est irréductible, alors pour toute raine $\alpha$ de $p(X)$, dans une clôture algébrique de $K$, $[K(\al) / K] = n = deg \, p.$ d'autre part $K(\al) \subseteq L$; où $L$ est corps de décomposition de $p(X)$, on en déduit que $n \mid |G| = [L / K]$.\\
+		De plus $\forall i,j \; , 1 \leq i,j \leq n \: (i \ne j)$, il existe un $K$-isomorphisme $\sigma : K(\al_i) \to K(\al_j)$, donné par
+		$\sigma(\al_i) = \al_j$, qui se prolonge en un $K$-automorphisme de $L$, ce qui montre que $G$ est transitif, $G \simeq S_n.$
+	\end{enumerate}
+\end{proof}
+\begin{example}
+	\label{exempleder} Soit $K$ un corps de caractéristique différente
+	de $2$ et soit $f(X)\in K[X]$ un polynôme irréductible de degré
+	$2$, on pose $K(\al)=L$ avec $\alpha$ une racine de $f(X)$ dans
+	une clôture de $K$, soit alors le groupe de Galois $G=Gal(L/K)$,
+	$f(X)$ est séparable car la $car\,K\ne2$, si les racines de $f(X)$
+	sont dans $K$ alors il est évident que $L=K$, ce qui montre que
+	$G=id_{K}$, sinon si les racines de $f(X)$ ne sont pas dans $K$,
+	alors $|G|=2=|S_{2}|$ et donc $G\simeq S_{2}\simeq\mathbb{Z}/2\mathbb{Z}$. 
+\end{example}
+\chapter{GROUPES DE GALOIS DES EXTENSIONS CUBIQUES ET QUARTIQUES}
+
+\lhead{\small{}CHAPITRE III} \rhead{\small{}GROUPES DE GALOIS DES
+	EXTENSIONS CUBIQUES ET QUARTIQUES} Dans ce chapitre nous allons décrire
+une procédure afin de déterminer les groupes de Galois des polynômes
+irréductibles, séparables de degré 3 et 4 sur des corps de caractéristique
+différente de 2, cela dit nous allons pas expliciter les formules
+classique des racines de ces polynômes \newpage Dans tout ce qui suit
+$K$ désigne un corps commutatif de caractéristique différente de
+$2$. 
+
+\section{Groupes de Galois des extensions cubiques}
+
+On a vu dans l'exemple \ref{exempleder} que le groupe de Galois sur
+un corps $K$ d'un polynôme de degré $2$ et soit il est égale a l'identité,
+soit il est isomorphe au groupe de permutation $S_{2}\simeq\mathbb{Z}/2\mathbb{Z}$.\\
+Dans cette section nous allons nous intéresser particulièrement aux
+groupes de Galois des polynômes de degré $3$, pour cela, rappelons
+que dans le corps $K$ que on a supposer de caractéristique différente
+de $2$, un polynôme unitaire de degré $3$ s'écrit nécessairement
+sous la forme $X^{3}+aX^{2}+bX+c$, où les coefficients $a,b,c$ sont
+dans $K$, cependant on a vu dans le chapitre II que on peut toujours
+ramener la forme précédente a un polynôme de la forme $X^{3}+pX+q$,
+avec $p,q$, dans $K$, maintenant si on pose $p(X)=X^{3}+pX+q$,
+avec $p(X)$ un polynôme dans $K[X]$, alors son discriminant comme
+on la vu au chapitre II est donné par la formule explicite suivante
+: $D_{p}=-(4p^{3}+27q^{2})$, dans la suite on s'intéresseras d'une
+manière particulière aux résultats obtenus après le calcul de ce discriminant
+et finalement on va déterminé d'une manière précise le groupe de Galois
+associé, pour débuter considérons le théorème suivant : \begin{theorem}\label{theoreme3.1}
+	Soit Soit $f(X)\in K[X]$ un polynôme irréductible et séparable de
+	degré $n$.\\
+	Le groupe de Galois de $G(f/K)$ est un sous groupe de $A_{n}\iff D_{f}$
+	est un carré dans $K$. \end{theorem} 
+\begin{proof}
+	Soit $\Delta=\prod_{i<j}(\al_{j}-\al_{i})\ne0,\;1\leq i,j\leq n$,
+	donc $\Delta\in K(\al_{1},\ldots,\al_{n})$ et $\Delta^{2}=D_{f}\in K$.
+	par suite le discriminant de $f$ est dans $K$ si et seulement si
+	$\Delta\in K$.\\
+	Pour $\sigma\in Gal(K(\al_{1},\ldots,\al_{n}):K)$, soit $\epsilon_{\sigma}=\pm1$
+	la signature de $\sigma$, de plus $\sigma$ est identifié soit a
+	une permutation paire soit a une permutation impaire, on pose alors
+	\[
+	\sigma(\Delta)=\prod_{i<j}(\sigma(\al_{j})-\sigma(\al_{i}))=\epsilon_{\sigma}\prod_{i<j}(\al_{j}-\al_{i})=\epsilon_{\sigma}\Delta,
+	\]
+	alors $\sigma(\Delta)=\pm\Delta$, puisque $\Delta\ne0$, alors $\Delta\ne-\Delta$,
+	on a donc$\sigma\in A_{n}\iff\epsilon_{\sigma}=1$, alors $\sigma\in A_{n}\iff\sigma(\Delta)=\Delta$,
+	on en déduit que $G(f/K)\simeq A_{n}\iff\Delta\in K$ 
+\end{proof}
+\begin{corollary}\label{corollairechapi3} Soit $f(X)\in K[X]$ un
+	polynôme irréductible et séparable de degré $3$.\\
+	Si $D_{f}=\delta^{2},\,\delta\in K$, ( i.e. $D_{f}$ est un carré
+	dans $K$ ), alors le groupe de Galois de $f(X)$ sur $K$, $G(f/K)\simeq A_{3}$,
+	sinon si $D_{f}$ n'est pas un carré dans $K$, (i.e. $\nexists\delta\in K,\:\text{tel que}\,D_{f}=\delta^{2}$),
+	alors $G(f/K)\simeq S_{3}$. \end{corollary} 
+\begin{proof}
+	D'après le théorème \ref{thoreme3}, comme $f(X)$ est irréductible
+	alors $G(f/K)$ est isomorphes a un sous-groupe transitif de $S_{3}$,
+	on sait que les deux seules groupes transitifs de $S_{3}$, Sont le
+	groupe alterné $A_{3}$ et le groupe symétrique $S_{3}$, et d'après
+	le théorème \ref{theoreme3.1}, $G(f/K)\simeq A_{3}\iff D_{f}$ est
+	un carré, sinon on aura $G(f/K)\simeq S_{3}$ 
+\end{proof}
+\begin{example}
+	Dans le tableau suivant, nous allons lister les discriminants et les
+	groupes de Galois $G(f/\mathbb{Q})$ sur $\mathbb{Q}$ des polynômes
+	de degrés 3 irréductibles de la forme $f_{a}(x)=X^{3}-aX-1,a\in\mathbb{Z}$,
+	pour $1\,\leq\,a\,\leq\,6$. Nous sautons le cas pour $a=2$ car $f_{2}(X)$
+	n'est pas irréductible sur $\mathbb{Q}$ (en effet $\pm1$ est racine
+	$X^{3}-2X-1$). Pour le cas $a=3$ (i.e. la seconde ligne du tableau)
+	on voit bien que $D_{f_{3}}=81=9^{2}$, un carré dans $\mathbb{Q}$
+	alors son groupe de Galois est isomorphe à $A_{3}$ (i,e, $G(f_{3}/\mathbb{Q})\,\simeq\,A_{3}$).
+	Pour les autre exemple, on a $D_{f_{a}}\ne\delta^{2}$ dans $\mathbb{Q}$
+	donc leur groupes de Galois sont isomorphes à $S_{3}$ (i,e, $G(f_{a}/\mathbb{Q})\,\simeq\,S_{3}$)
+	\\
+	
+	\begin{proof}[l'irréductibilité de $f_{a}$]
+		On sait bien que un polynôme est irréductible sur un corps $K$ (qui
+		dans notre cas $K=\mathbb{Q}$) s'il n'admet pas de racine dans $K$.
+		Or si $\al\in\mathbb{Q}$ est racine de $f_{a}$ alors $\al^{3}-a\al-1=0$
+		ce qui implique que $\al(\al^{2}-a)=1$, et donc $\al\mid1$, ce qui
+		veut dire que $\al=\pm1$ et par conséquent $\al^{2}-a=\pm1$ et donc
+		on a bien $a=0$ ou bien $a=2$. ainsi $\forall a\in\mathbb{Z},\,\text{avec }\,a\ne0\,,a\ne2\,\Longrightarrow f_{a}$
+		irréductible sur $\mathbb{Q}$ 
+	\end{proof}
+	\begin{table}[h]
+		\centering{}%
+		\begin{tabular}{|l||c||r|}
+			\hline 
+			$f_{a}(X)$  & $D_{f_{a}}$  & $G(f_{a}/\mathbb{Q})$ \tabularnewline
+			\hline 
+			$X^{3}-X-1$  & $-23$  & $S_{3}$ \tabularnewline
+			$X^{3}-3X-1$  & $81$  & $A_{3}$ \tabularnewline
+			$X^{3}-4X-1$  & $229$  & $S_{3}$ \tabularnewline
+			$X^{3}-5X-1$  & $473$  & $S_{3}$ \tabularnewline
+			$X^{3}-6X-1$  & $837$  & $S_{3}$ \tabularnewline
+			$X^{3}-7X-1$  & $1345$  & $S_{3}$ \tabularnewline
+			$X^{3}-8X-1$  & $1940$  & $S_{3}$ \tabularnewline
+			$X^{3}-9X-1$  & $2889$  & $S_{3}$ \tabularnewline
+			\hline 
+		\end{tabular}\caption{Quelques groupes de Galois sur $\mathbb{Q}$}
+	\end{table}
+	
+	Il s'avère que pour un $a\in\mathbb{Z}-\left\lbrace 0,2\right\rbrace $,
+	le groupe de Galois $G(f_{a}/\mathbb{Q})\simeq A_{3}\iff a=3$, chose
+	qui est étroitement lié au dernier théorème de Fermat pour l'exposent
+	3. Une telle connexion n'est pas du tout évidente !, d'après le corollaire
+	\ref{corollairechapi3} le groupe de Galois $G(f_{a}/\mathbb{Q})\simeq A_{3}\iff D_{f_{a}}$
+	est un carré avec $D_{f_{a}}=-(4(-a)^{3}+27)$, puisque $D_{f_{a}}$
+	est un entier et c'est un carré dans $\mathbb{Q}\iff$ c'est un carré
+	dans $\mathbb{Z}$, nous voulons dans trouver toutes solutions intégrales
+	de l'équation $y^{2}=4x^{3}-27$, cette équation admet pour solution
+	$\left\lbrace (3,9),(3,-9)\right\rbrace $, on travaillant avec des
+	nombres rationnelles, pas seulement des entiers et sous le changement
+	non évident des variables $r=\dfrac{9-y}{6x}$ et $s=\dfrac{9+y}{6x}$,
+	leurs inverses respectifs sont donnés par $x=\dfrac{3}{r+s}$ et $y=\dfrac{-9(r-s)}{r+s}$,
+	la condition $y^{2}=4x^{3}-27\iff r^{3}+s^{3}=1$, alors l'équation
+	$y^{2}=4x^{3}-27$ admet une solution rationnelle (avec $y\ne\pm9$)
+	si et seulement si l'équation $r^{3}+s^{3}=1$ admet une solution
+	rationnelle avec $r\ne0$ et $s\ne0$. Alors que $r^{3}+s^{3}=1$
+	n'admet pas de solution $(r,s)$ non trivial. Et c'est le résultat
+	du dernier théorème de Fermat. 
+\end{example}
+
+\begin{remark} Si $G(f/\mathbb{Q})\simeq A_{3}$, alors toutes ses
+	racines génèrent la même extension de $\mathbb{Q}$, et toutes ses
+	racines sont réelles puisque au moins une racine est réelle. Cependant
+	cela ne veut dire que si un polynôme cubique (unitaire et irréductible
+	sur $\mathbb{Q}$) admet que des racines réelles que son groupe de
+	Galois est $A_{3}$, si on prend par exemple le polynôme $X^{3}-4X-1$.
+	On sait que il admet que des racines réelles mais on a bien vu que
+	son groupe de Galois est isomorphe à $S_{3}$(i.e. $G(X^{3}-4X-1/\mathbb{Q})\simeq S_{3}$).
+	Les racines de $X^{3}-4X-1$ génèrent des corps différents l'un de
+	l'autre qui sont contenus dans $\mathbb{R}$. \end{remark} \begin{remark}
+	\label{RSeparable} Si la caractéristique du corps $K$ vaut $3$,
+	alors il faut s'assuré que le polynôme est bien séparable, le cas
+	ou la caractéristique est différente de $3$, alors tout polynôme
+	de degré $3$ est nécessairement séparable. \end{remark} \begin{corollary}
+	Soit $a=k^{2}+k+7,\;k\in\mathbb{Z}$ et soit $p(X)=X^{3}-aX+a$, alors
+	\begin{enumerate} 
+		
+		\item $p(X)$ est irréductible sur $\mathbb{Q}$. 
+		
+		\item $G(p/\mathbb{Q})\simeq A_{3}$. \end{enumerate} \end{corollary} 
+\begin{enumerate}
+	\item On sait que $\forall k\in\mathbb{Z}$, $a\in\mathbb{Z}$ est toujours
+	impaire, donc 
+	\[
+	p(X)\equiv X^{3}+X+1\,\mod2,
+	\]
+	un polynôme qui est irréductible sur $\mathbb{F}_{2}$, donc forcément
+	irréductible sur $\mathbb{Q}$. 
+	\begin{enumerate}
+		\item On a par les résultats \ref{exempledis}, $D_{p}=-4(-a)^{3}-27a^{2}=a^{2}(4a-27)$.
+		et comme $a=k^{2}+k+7$ on aura donc 
+		\[
+		D_{p}=(k^{2}+k+7)^{2}(4(k^{2}+k+7)-27)=(k^{2}+k+7)^{2}(4k^{2}+4k+1)
+		\]
+		\[
+		=(k^{2}+k+7)^{2}(2k+1)^{2}=((k^{2}+k+7)(2k+1))^{2}
+		\]
+		ce qui veut dire que $D_{p}$ est un carré dans $\mathbb{Q}$, et
+		par \ref{corollairechapi3} nous aurons $G(p/\mathbb{Q})\simeq A_{3}$. 
+	\end{enumerate}
+\end{enumerate}
+\begin{theorem} \label{ThCh3} Soit $f(X)\in K[X]$ un polynôme séparable
+	de degré $3$ et soit $\Delta=D_{f}$, si $\alpha$ est une racine
+	de de $f(X)$, alors le corps de décomposition de $f(X)$ sur $K$
+	est $Dec_{K}(f(X))=K(\al,\sqrt{\Delta})$, en particulier, si $f(X)$
+	est réductible alors $Dec_{K}(f(X))=K(\sqrt{\Delta})$ \end{theorem} 
+\begin{proof}
+	Posons $f(X)\in K[X]$ un polynôme unitaire et séparable de degré
+	$3$, soit $\al_{1},\al_{2},\al_{3}$ les racines de $f(X)$ dans
+	une extension de $K$, on pose alors $f(X)=(X-\al_{1})g(X)$, donc
+	$\al_{2}$ et $\al_{3}$ sont des racines de $g(X)$, en particulier
+	$g(\al_{1})\ne0$, nécessairement $g(X)$ est un polynôme de degré
+	$2$ sur $K(\al_{1})[X]$. On peut alors écrire l'égalité suivante
+	\[
+	K(\al_{1},\al_{2},\al_{3})=K(\al_{1})(\al_{2},\al_{3})=K(\al_{1})(\sqrt{D_{g}}).
+	\]
+	Puisque $f(X)$ est unitaire et divisible par $g(X)$ sur $K(\al_{1},\al_{2},\al_{3})$
+	; \\
+	Alors 
+	\[
+	D_{f}=g(\al_{1})^{2}D_{g}
+	\]
+	et donc $K(\al_{1},\sqrt{D_{g}})=K(\al_{1},\sqrt{D_{f}})=K(\al_{1},\sqrt{\Delta})$.\\
+	Si $f(X)$ est réductible, en choisissant $\al_{1}\in K$ racine
+	de $f(X)$. Alors $K(\al_{1},\sqrt{D_{g}})=K(\Delta)$\\
+	Il important que le corps de base $K$ ne serait pas de caractéristique
+	$2$. La preuve qu'on a utilisé l'impose, car nous avons utilisé la
+	forme quadratique qui ne fonctionne pas en caractéristique $2$. \\
+	Alors une question se pose, \ref{ThCh3} peut il être prouver avec
+	différents arguments en $carK=2$? ; La réponse est non ; en en effet,
+	le théorème telle qu'il est écrit, il est faux dans le cas où $carK=2$.
+	Si nous prenons le contre exemple suivant: $K=F(u)$ avec $carF=2$
+	et $u$ un nombre transcendant sur $F$, et le polynôme $f(X)=X^{3}+uX+u$
+	qui est irréductible dans $K[X]$ avec $D_{f}=u^{2}$, alors $K(\al_{1},\sqrt{\Delta}))=K(\al_{1},\sqrt{D_{f}})=K(\al_{1},u)=K(\al_{1})$.
+	On peut montrer que le degré du corps de décomposition de $f(X)$
+	sur $K$ est égale à $6$ et non $3$, et par conséquent $K(\al_{1},\sqrt{\Delta})$
+	n'est pas le corps de décomposition de $f(X)$ sur $K$.\\
+	Preuve que le corps de décomposition de $f(X)$ est de degré $6$
+	sur $K$. En effet comme $\al_{1}$ est racine du $f(X)$ alors $f(X)$
+	s'écrit de la manière suivante 
+	\[
+	f(X)=(X-\al_{1})g(X)\,\text{dans}\,K(\al_{1},\sqrt{D_{g}}),
+	\]
+	et donc on a $D_{g}$ divise $D_{f}$ et donc $u^{2}$ dans $K=F(u)$,
+	alors $\exists\delta\in K\,\text{tel que}\,\delta D_{g}=u^{2}\,\text{, et}\,\delta>1$,
+	et comme $D_{g}\in K$ alors il s'écrit de la manière unique $D_{g}=a+bu+cu^{2}$
+	et comme $D_{g}<D_{f}=u^{2}$ alors $D_{g}=a+bu$ et posons $\delta=a'+b'u$
+	ainsi calculons $\delta D_{g}=aa'+(ab'+a'b)u+bb'u^{2}$ nous trouverons
+	que $\delta=u$ et $D_{g}=u$, par suite, on aura 
+	\[
+	f(X)\in K(\al_{1},\sqrt{D_{g}})=K(\al_{1},\sqrt{u})=Dec_{K}(f)
+	\]
+	mais on sait que $\sqrt{u}\notin K$ et $u\in K$ alors $\left[K(\sqrt{u})/K\right]=2)$,
+	et d'un autre côté on a $\left[K(\al_{1})/K\right]=3$ et nous
+	savons aussi que $\sqrt{u}\notin K(\al_{1})$ et en utilisant le théorème
+	de la base télescopique nous aurons $\left[K(\sqrt{u})/K\right]\left[K(\al_{1})\,/\;K\right]=\left[K(\al_{1},\sqrt{u})/K\right]=3\times2=6$ 
+\end{proof}
+\begin{remark} Soient $F$ un corps et $u$ un nombre transcendant
+	sur $F$. Sur $F(u)[X]$ le polynôme $f(X)=X^{3}+uX+u$ est irréductible
+	par d'Eisenstein en $p=u$. Son discriminant $D_{f}=-u^{2}(4u+27)$.
+	\begin{enumerate} 
+		
+		\item Si $carF\notin\left\lbrace 2,\,3\right\rbrace $, alors $D_{f}$
+		n'est pas un carré sur $F(u)$ car $4u+27$ ne l'est pas. Si $carF=3$
+		alors $D_{f}=-4u^{3}=-u^{3}$ n'est pas un carré sur $F(u)$. Et par
+		conséquent lorsque $carF\ne2$ alors $G(f/F(u))\simeq S_{3}$. 
+		
+		\item Nous ne pouvons rien dire à propos de $G(f/F(u))$ lorsque
+		$carF=2$. Même si $D_{f}=u^{2}$ est bien un carré parfait sur $F(u)$,
+		mais ça n'implique pas forcément que $G(f/F(u))\simeq A_{3}$. Le
+		théorème \ref{theoreme3.1} et la remarque \ref{RSeparable} dont
+		cette remarque dépend nécessitent que $carF\ne2$, autrement dit,
+		dans un corps $F$ de caractéristique $2$ nous ne pouvons pas dire
+		que $Gal(f/F)$ est isomorphe ou pas à $A_{n}$ en vérifiant seulement
+		$D_{f}$ et en utilisant les théorèmes qu'on a cités. \end{enumerate}
+\end{remark} 
+\begin{example}
+	Si nous prenons au hasard un polynôme $p$ de degré 3, irréductible
+	sur un corps $\mathbb{Q}[X]$, il est fortement probable que son groupe
+	de Galois soit isomorphe à $S_{3}$, car son discriminant ne soit,
+	probablement, pas un carré dans $\mathbb{Q}$. Il est donc agréable
+	d'avoir quelques uns dont $Gal(p/\mathbb{Q})\simeq A_{3}$. \\
+	
+	\begin{table}[!ht]
+		
+		\begin{center}
+			
+			
+			
+			\begin{tabular}{|c|c||c|}
+				\hline 
+				$p(X)$  & $D_{p}$  & les racines de $p$ \tabularnewline
+				\hline 
+				$X^{3}-3X-1$  & $9^{2}$  & $r\,\text{,}\,r^{2}-r-2\,\text{,}\,-r^{2}+2$ \tabularnewline
+				$X^{3}-X^{2}-2X+1$  & $7^{2}$  & $r$, $r^{2}-r-1$, $-r^{2}+2$ \tabularnewline
+				$X^{3}+X^{2}-4X+1$  & $13^{2}$  & $r$, $r^{2}-r+3$, $-r^{2}-2r+2$ \tabularnewline
+				$X^{3}+2X^{2}-5X+1$  & $19^{2}$  & $r$, $r^{2}+2r-4$, $-r^{2}-3r+2$ \tabularnewline
+				\hline 
+				
+			\end{tabular}
+			\caption{quelques polynômes cubiques dont le groupes de Galois est isomorphe à $A_3$} \label{tableau2}
+		\end{center}
+		
+	\end{table}
+	
+	Le tableau \ref{tableau2} propose quelques polynômes de degré $3$, irréductible
+	sur $\mathbb{Q}$ -car ils sont irréductibles sur $\mathbb{F}_2$.
+	puisque ils n'ont pas de racine sur $\mathbb{F}_2$ et dont le
+	discriminant est un carré parfait sur $\mathbb{Q}$. Nous énumérons
+	les trois racines de chaque polynôme en fonction d'une de ses racines
+	que nous notons $r$. Cette liste des racine nous dit essentiellement
+	quels sont les éléments de $Gal(p/\mathbb{Q})$ car chaque automorphisme
+	est déterminé par son effet sur $r$. 
+	c'est une famille des $A_3$
+\end{example}
+\begin{example}
+	Dans cet exemple nous donnerons quelques groupes de Galois des polynômes sur des corps fini, on préciseras a chaque fois la caractéristique du corps, les résultats du tableau suivant sont obtenus a l'aide d'un programme informatique.
+	\begin{table}[!ht]
+		\begin{center}
+			\begin{tabular}{|c|c||c||c|}
+				\hline 
+				$p(X)$  & $\mathbb{F}_p$ & $D_{p}$  &$G(p/\mathbb{F}_p)$ \tabularnewline
+				\hline 
+				$X^{3} +99X +103$  &$\mathbb{F}_{107}$ & $11 \, \text{et} \, 15^2 \equiv 11 \mod [107]$  &  $A_3$ \tabularnewline
+				$X^{3} +99X +103$  &$\mathbb{F}_{2011}$ & $1164 \, \text{et} \, 177^2 \equiv 1164 \mod [2011]$  &  $A_3$ \tabularnewline
+				$X^{3} +798X^2 + 145X +225$  &$\mathbb{F}_{2011}$ & $880 \;\, \text{n'est pas un carré} \mod [2011]$  &  $S_3$ \tabularnewline
+				$X^{3}+ 8X^{2} + 94X + 13$  & $\mathbb{F}_{107}$  & $33 \, \text{et} \, 51^2 \equiv 33 \mod [107]$ & $A_3$ \tabularnewline
+				$X^{3}+ 1X^{2} + 2X + 7$  & $\mathbb{F}_{13}$  & $4 \, \text{et} \, 2^2 \equiv 4 \mod [13]$ & $A_3$  \tabularnewline
+				$X^{3}+ 1X^{2} + 789X + 456$  & $\mathbb{F}_{2003}$  & $642 \;\, \text{n'est pas un carré} \mod [2003]$ & $S_3$  \tabularnewline
+				$X^{3}+ 78X^{2} + 2002X + 2001$  & $\mathbb{F}_{2003}$  & $1012 \, \text{et} \, 538^2 \equiv 1012 \mod [2003]$ & $A_3$  \tabularnewline
+				\hline 	
+			\end{tabular}
+			\caption{Quelques groupes de Galois des polynômes cubiques sur des corps fini} \label{tableau2}
+		\end{center}
+		
+	\end{table} 
+	
+\end{example}
+\section{Groupes de Galois des extensions quartiques}
+\subsection{Les sous-groupes transitifs de $S_4$ }
+Afin de déterminer les groupes de Galois des extensions quartiques, il est préférable, dans un premier temps, de lister tout les sous-groupes transitifs de $S_4$. \\
+Alors ce qu'il faut savoir c'est que les éléments de ces sous-groupes de $S_4$ sont des permutations agissantes sur un ensemble a $4$ éléments qu'on notera $\left\lbrace 1,2,3,4\right\rbrace $, donc on aura 
+\begin{enumerate}
+	\item Les sous-groupes d'ordre 4 
+	\begin{itemize}
+		\item Le groupe cyclique isomorphe à $\mathbb{Z}/4\mathbb{Z}$, engendré par un cycle. Par exemple $(1234)$.  
+		\item Le groupe de Klein engendré par des doubles transposition, notons le $V$ avec: $$V = \left\lbrace id,(12)(34),(13)(24),(14)(23)\right\rbrace$$.
+	\end{itemize}
+	\item Les sous-groupes d'ordre $8$ isomorphes au groupe Diédrale noté $D_4$ avec : $$D_4 = \left\lbrace id,(1234)(13),(1243)(14),(1324)(12)\right\rbrace$$.
+	\item Le groupe alterné $A_4$ qui est d'ordre $12.$
+	\item Le groupe symétrique $S_4$ qui est d'ordre $24$.
+\end{enumerate}
+Le tableau suivant regroupe alors les sous-groupes transitifs de $S_4$ 
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{|c || c c c c c| }
+			\hline 
+			Cycle & $S_4$ & $A_4$ & $D_4$ & $\mathbb{Z}/4\mathbb{Z}$ & $V$ \\
+			\hline 
+			$(1,1,1,1)$ & $1$ &  $1$ & $1$ & $1$ & $1$ \\ 
+			$(1,1,2)$ & $6$ & & $2$ & & \\ 
+			$(2,2)$ & $3$ & $3$ & $3$ & $1$ & $3$ \\ 
+			$(1.3)$ & $8$ & $8$ & & & \\ 
+			$(4)$ & $6$ & & $2$ & $2$ & \\ 
+			\hline
+			$\sum$ & $24$ & $12$ & $8$ & $4$ & $4$ \\
+			\hline
+			
+		\end{tabular}
+		\caption{Les sous-groupes transitifs de $S_4$} \label{tableau 3}
+	\end{center}
+\end{table}
+\begin{remark}
+	\begin{enumerate}
+		\item Les seuls sous-groupes transitifs de $S_4$ qui sont contenu da $A_4$ sont $A_4$ et $V$.
+		\item Les seuls sous-groupes transitifs de $S_4$ dont l'ordre est divisible par 3 sont $S_4$ et $A_4$.
+		\item Les seuls sous-groupes transitifs de $S_4$ contenant un cycle de type $(1,1,2)$ sont $S_4$ et $D_4$.
+	\end{enumerate} 
+\end{remark} 
+\subsection{Groupes de Galois des extensions quartiques}
+Supposons que le polynôme $p(X) = X^4 + aX^3 + bX^2 + cX + d, \: a,b,c,d \in K$, unitaire et irréductible dans $K[X]$, donc $D_p \ne 0$, notons par $(1 \leq \al_{i} \leq 4)$, les racines de $p(X)$ dans un corps de décomposition de ce dernier, soit alors l'égalité suivante : 
+\begin{equation}
+	X^4 + aX^3 + bX^2 + cX + d = (X - \al_{1})(X-\al_{2})(X- \al_{3})(X - \al_4).
+\end{equation} 
+On a vu que un groupe de Galois d'un polynôme $f(X)$ cubique irréductible et séparable dans un corps $K[X]$, est entièrement déterminé par son discriminant $D_f = \Delta$, si oui ou non ce dernier est un carré dans $K$; chose qui peut être pensé en terme de polynôme quadratique a savoir un polynôme de la forme $X^2 - \Delta$ ayant une racine dans $K$, on peut alors pensé qu'un polynôme quartique dépend du comportement d'un polynôme cubique associé, pour cela on essayeras de déterminer un polynôme cubique ayant des racines dans le corps de décompositions de $p(X) = X^4 + aX^3 + bX^2 + cX + d, \: a,b,c,d \in K$ sur $K[X]$ notons le $L$, sachant que ces groupes de Galois étant dans $S_4$, on chercheras donc un polynôme a $4$ variables qui sous les 24 permutation possible admettrais $3$ valeurs.  \\
+Cependant on sait que le sous-groupe $V$ est normal dans $S_4$, ce dernier laisse fixe les éléments suivant dans $L$ : 
+$$\beta_{1} =\al_{1}\al_{2} + \al_{3}\al_{4}, \; \beta_{2} = \al_{1} \al_{3} + \al_{2}\al_{4}, \; \beta_{3} = \al_{1}\al_{4} + \al_{2}\al_{3}.$$ 
+Les $1 \leq \beta_{i} \leq 3 \in L$ engendrent un sous-corps de $L$ noté $K(\beta_{1},\beta_{2},\beta_{3}),$ et ce sont des racines d'un polynôme $\phi(X)$ défini par \begin{equation}\label{equachap3}
+	\phi(X) = 	(X-\beta_{1})(X-\beta_{2})(X-\beta_{3}).
+\end{equation}
+\begin{definition}
+	le polynôme $\phi(X)$ est appelé résolvant cubique du polynôme $p(X)$. \\ 
+	On développent la formule \eqref{equachap3} on aura  \begin{equation}\label{equa2chap3}
+		\phi(X) = X^3 - (\beta_{1} + \beta_{2} + \beta_{3})X^2 + (\beta_{1}\beta_{2} + \beta_{1}\beta_{3} + \beta_{2}\beta_{3})X - (\beta_{1}\beta_{2}\beta_{3}).
+	\end{equation}
+	Par calcule on obtient les résultats suivantes : 
+	\begin{enumerate}
+		\item $$(\beta_{1} + \beta_{2} + \beta_{3}) = -(\al_{1}\al_{2} + \al_{3}\al_{4} + \al_{1}\al_{3}+ \al_{2}\al_{4} + \al_{1}\al_{4} + \al_{2}\al_{3}) = -b.$$
+		\item \begin{equation*}
+			\begin{split}
+				(\beta_{1}\beta_{2} + \beta_{1}\beta_{3} + \beta_{2}\beta_{3}) = \al_{1}^2\al_{2}\al_{3} + \al_{1}\al_{2}^2\al_{4}+\al_{2}\al_{3}\al_{4}^2+\al_{2}\al_{3}\al_{4}^2  + \al_{1}^2\al_{2}\al_{4} + \al_{1}\al_{2}^2\al_{3} + \al_{1}\al_{3}\al_{4}^2 + \\ \al_{2}\al_{3}^2\al_{4}+\al_{1}^2\al_{3}\al_{4}+\al_{1}\al_{2}\al_{3}^2+\al_{1}\al_{2}\al_{4}^2 + \al_{2}^2\al_{3}\al_{4} = ac - 4d
+			\end{split}
+		\end{equation*}
+		\item	$$(\beta_{1}\beta_{2}\beta_{3}) = -(\al_{1}\al_{2}+\al_{3}\al_{4})(\al_{1}\al_{3}+\al_{2}\al_{4})(\al_{1}\al_{4}+\al_{2}\al_{3}) = -(a^2d + c^2 - 4bd).$$
+	\end{enumerate}
+	Chose qui ramène l'équation \eqref{equa2chap3} a la formule suivante : $$ \phi(X) = X^3 - bX^2 + (ac-4d)X - (a^2d + c^2 - 4bd).$$ 
+\end{definition}
+\begin{remark}
+	\begin{itemize}
+		\item Dans le cas ou $p(X)$ est unitaire, pour vérifié si $p(X)$ est irréductible il suffit de voir si $\phi(X)$ est irréductible. 
+		\item Si $a = b = 0$, alors $p(X) = X^4 + cX +d \Longrightarrow X^3 - (4d)X - c^2.$
+	\end{itemize}
+	
+\end{remark}
+\begin{proposition}
+	Sous les hypothèses précédente si $p(X)$ un polynôme unitaire et irréductible de degré $4$ de $K[X]$ et $\phi(X)$ sa résolvante cubique associé alors 
+	\begin{equation}\label{equachap3deg4}
+		D_p = \prod_{i<j}(\al_{i} - \al_{j})^2 = D_\phi = \prod_{i<j}(\beta_{i} - \beta_{j})^2 .
+	\end{equation}
+\end{proposition}
+\begin{proof}
+	On applique la méthode de Ferrari \ref{disdeg4} sur le polynôme $p(X)$, le résultat \ref{equachap3deg4} est immédiat, de plus d'après \ref{resultatdeg3} on a $$D_\phi = D_{p}=18pqr-4p^{3}r+p^{2}q^{2}-4r^{3}-27q^{2}.$$
+\end{proof} 
+\begin{theorem}\label{thechap3deg4}
+	Avec les notation précédente, $G(p/K)$ est décrit comme l'indique le tableau suivant :
+	\begin{table}[!h]
+		\begin{center}
+			\begin{tabular}{| c || c || c |}
+				\hline 
+				$D_p \in K$ & $\phi(X) \in K[X]$ & $G(p/K)$ \\ 
+				\hline 
+				n'est pas un carré & irréductible & $S_4$ \\ 
+				un carré & irréductible & $A_4$ \\ 
+				n'est pas un carré & réductible & $D_4$ ou $\mathbb{Z}/4\mathbb{Z}$ \\ 
+				carré & réductible & $V$ \\ 
+				\hline
+			\end{tabular} 
+			\caption{Tableau représentent les groupes de Galois des extensions quartiques}
+		\end{center}
+	\end{table} 	
+\end{theorem}
+\begin{proof}
+	Nous vérifierons chaque ligne dans le tableau.\\
+	\underline{$D_p$ n'est pas un carré et $\phi(X)$ est irréductible sur $K$ : } comme $D_p$ n'est pas un carré alors $G(p/K)\not\subset A_4$, et comme la résolvante $\phi(X)$ est irréductible sur $K$ et que ses racines sont dans le corps de décomposition de $p(X)$ sur $K$ (i.e., $\al_{i}\in Dec_K(p(X)),\,\forall i,\, \al_i \,\text{est racine de }p(X)$, adjoignant une racine de $\phi(X)$ à $K$ nous donne une extension de degré $3$ incluse dans $Dec_K(p(X))$, donc $|G(p/K)|$ est divisible par $3$, il est aussi divisible par $4$, donc $G(p/K)\simeq S_4\,\text{ou}\,A_4$, mais nous savons que $G(p/K)\not\simeq A_4$, et ceci implique que $G(p/K)\simeq S_4$.\\
+	\underline{$D_p$ est un carré et $\phi(X)$ est irréductible sur $K$ : } On a $G(p/K)\subset A_4$ et $G(p/K)$ est divisible par $3$ et $4$, ce qui implique que $G(p/K)\simeq A_4$.\\
+	\underline{$D_p$ n'est pas un carré et $\phi(X)$ est réductible sur $K$ : } puisque $D_p$ n'est pas un carré, alors $G(p/k) \not\subset A_4$, donc $G(p/K)$ est isomorphe soit a $S_4 , \, D_4$ ou $\mathbb{Z}/4\mathbb{Z}$; nous allons montrer $G(p/K) \not\simeq S_4$. Ce qui distingue $S_4$ des deux autres choix c'est que il contient $3$-cycles. Si $G(p/K) \simeq S_4 \Longrightarrow (123) \in G(p/K)$, par suite on applique cet automorphisme dans le groupe de Galois aux racines de $\phi(X)$, on aura donc un seul orbite qui est le suivant : $$\al_{1}\al_{2} + \al_{3}\al_{4} \mapsto \al_{2}\al_{3} + \al_{1}\al_{4} \mapsto \al_{3}\al_{1} +
+	\al_{2}\al_{4} \mapsto \al_{1}\al_{2} + \al_{3}\al_{4}.$$ 
+	Ces nombres sont distincts puisque $\phi(X)$ est séparable, donc au moins une racine de $\phi(X)$ se trouve dans $K$, alors $G(p/K)$-orbite de cette racine est elle même, contradiction, on a pas trouver un $3$-cycle.\\
+	\underline{$D_p$ est un carré et $\phi(X)$ est réductible sur $K$ :} Comme $G(p/K) \subset A_4$, alors $g(p/K) \simeq V$ ou $g(p/K) \simeq A_4$, nous allons éliminer le choix où $g(p/K) \simeq A_4$, on peut distinguer $V$ de $A_4$ en effet $A_4$ contient un $3$-cycle contrairement a $V$, si on a un $3$-cycle sur les racines de $p(X)$ dans $G(p/K)$, et si nous appliquons cela a une racines de $\phi(X)$ on obtiendra que toutes les racines sont dans une seule 
+	$G(p/K)-$orbite, contradiction, $\phi(X)$ est séparable et irréductible sur $K$, on en déduit que $G(p/K)$ ne contient pas un $3$-cycles.
+\end{proof}
+\begin{example}
+	Le tableau suivant donne quelques exemples des groupe de Galois des polynômes de degré $4$ sur $\mathbb{Q}$. 
+	\begin{table}[!h]
+		\begin{center}
+			\begin{tabular}{|c||c||c||c|}
+				\hline
+				$p(X)$ & $D_p$ & $\phi(X)$ & $G(p/\mathbb{Q})$ \\ 
+				\hline 
+				$X^4 - X - 1$ & $- 283$ & $X^3 + 4X - 1$ & $S_4$ \\ 
+				$X^4 + 2X + 2$ & $101\times4^2$ & $X^3 - 8X - 4$ & $S_4$ \\ 
+				$X^4 + 8X + 12$ & $576^2$ & $X^3 - 48X - 64$ & $A_4$ \\ 
+				$X^4 + 3X + 3$ & $21\times15^2$ & $(X+3)(X^2 - 3X -3)$ & $D_4$ ou $\mathbb{Z}/4\mathbb{Z}$ \\ 
+				$X^4 + 5X + 5$ & $5 \times 55^2$ & $(X-5)(X^2+5X+5)$ & $D_4$ ou $\mathbb{Z}/4\mathbb{Z}$ \\ 
+				$X^4 + 36X + 63$ & $4320^2$ & $(X-18)(X+6)(X+12)$& $V$ \\ 
+				\hline
+			\end{tabular}
+			\caption{Quelques exemples des groupe de Galois des polynômes de degré $4$ sur $\mathbb{Q}$}
+		\end{center}
+	\end{table}
+\end{example} 
+\begin{example}
+	Le tableau suivant donne quelques exemples des groupe de Galois des polynômes de degré $4$ sur $\mathbb{F}_p$. 
+	\begin{table}[!h]
+		\tiny
+		\begin{center}
+			\begin{tabular}{|c||c||c||c||c|}
+				\hline
+				$f(X)$ & $\mathbb{F}_p$ & $D_f$ & $\phi(X)$ & $G(p/\mathbb{F}_p)$ \\ 
+				\hline 
+				$X^4 + X^3 + 12X^2 + 7X + 9$ & $\mathbb{F}_{13}$ & $9,\,\, 3^2\equiv 9 \mod [13]$ &  réductible & $V$ \\ \hline
+				$X^4 + 14X^3 + 6X + 58$ & $\mathbb{F}_{103}$ & $39 \,\, \text{n'est pas un carré}\mod [103]$ &  réductible & $D_4$ ou $\mathbb{Z}/4\mathbb{Z}$ \\ \hline
+				$X^4 + 2010X^3 + 2009X^2 + 2007X + 2006$ & $\mathbb{F}_{2011}$ & $1816,\,\, 665^2\equiv 1816 \mod [2011]$ &  irréductible & $A_4$ \\ \hline
+				$X^4 + 7X^2 + 8X + 14$ & $\mathbb{F}_{4127}$ & $1522 \,\, \text{n'est pas un carré}\mod [4127]$ &  irréductible & $S_4$ \\  \hline
+				$X^4 + 201X^3 + 2003X + 207$ & $\mathbb{F}_{3217}$ & $3009 \,\, \text{n'est pas un carré}\mod [3217]$ &  irréductible & $S_4$ \\  \hline 
+				$X^4 + 14X^3 + 13X + 7$ & $\mathbb{F}_{23}$ & $15 \,\, \text{n'est pas un carré}\mod [23]$ &  réductible & $D_4$ ou $\mathbb{Z}/4\mathbb{Z}$ \\ 
+				\hline
+			\end{tabular}
+			\caption{Quelques exemples des groupe de Galois des polynômes de degré $4$ sur $\mathbb{F}_p$}
+		\end{center}
+	\end{table}
+\end{example} 
+\begin{proposition}
+	Soit $F$ un corps est $u$ un élément transcendant sur $F$, Dans $F(u)[X]$, le polynôme $p(X) = X^4 + uX + u$, irréductible et unitaire alors $$G(p/F(u)) = S_4.$$ 
+\end{proposition} 
+\begin{proof}
+	On a bien $p(X)$ irréductible (il est d'Eisenstein en $t = u$) et on sait que $D_p = -27u^4 + 256u^3 = u^3(256 - 27u)$, Si $car \, F \ne 2 \, \text{où} \, 3$, on vois clairement que $D_p$ n'est pas un carré. \\
+	Maintenant si $car \, F = 3 \Longrightarrow D_p = u^3$, qui n'est pas un carré.\\
+	La résolvante cubique de $p(X)$, $\phi(X) = X^3 - 4uX - u^2$, qui est irréductible dans $F(u)[X]$ puisque in n'admet pas de racine dans $F(u)$, par suite et d'après le théorème précédent on en déduit que $G(p/F(u)) \simeq S_4.$  
+\end{proof}
+\begin{corollary}
+	\begin{enumerate}
+		\item $G(p/K) \simeq V \iff \phi(X)$ est scindé sur $K$.
+		\item $G(p/K) \simeq D_4 \, \text{ou} \, \mathbb{Z}/4\mathbb{Z} \iff \phi(X)$ admet une seule racine dans $K$.
+	\end{enumerate}
+\end{corollary}
+\begin{proof}
+	\begin{enumerate}
+		\item La condition pour que $G(p/K)\simeq V$ est que $D_p$ soit un carré dans $K$ et $\phi(X)$ soit réductible sur $K$. \\ Puisque $D_p=D_{\phi}$ et $G(p/K)\simeq V\iff D_{\phi}$ soit un carré dans $K$ et que $\phi(X)$ soit réductible sur $K$. \\Et par le théorème \ref{ThCh3}, $Dec_{K}(\phi(X))=K(r\text{,}\,\sqrt{D_{\phi}})$ où $r$ est une racine de $\phi(X)$, ainsi $G(p/K)\simeq V \iff \phi\,\text{est scindé sur}\,K$.
+		\item La condition pour que $G(p/K)\simeq D_4 \, \text{ou}\, \mathbb{Z}/4\mathbb{Z}$ est que $D_p$ soit un carré dans $K$ et que $\phi(X)$ soit réductible sur $K$. Ces conditions, et par le théorème \ref{ThCh3} pour $\phi(X)$ sont équivalentes avec le fait que $\phi(X)$ a une racine dans $K$ mais qu'il ne soit scindé sur $K$ ce qui implique que $\phi(X)$ a une unique racine dans $K$.
+	\end{enumerate}
+\end{proof}
+\begin{theorem}\label{thechap3deg4.1}
+	Soit $p(X)$ un polynôme irréductible de degré $4$ dans $\mathbb{Q}[X]$, si $G(p/\mathbb{Q}) \simeq \mathbb{Z}/4\mathbb{Z}$ alors $D_p > 0$, par conséquent si $G(p/\mathbb{Q}) \simeq D_4, \, ou \, \mathbb{Z}/4\mathbb{Z}$ et $D_p < 0$ alors $G(p/\mathbb{Q}) \simeq D_4$.
+\end{theorem}
+\begin{proof}
+	Si $G(p/\mathbb{Q}) \simeq \mathbb{Z}/4\mathbb{Z}$, alors $[Dec_\mathbb{Q}(p(X))] = 4$, tout racine de $p(X)$ génère une extension de $\mathbb{Q}$ de degré $4$, donc le corps généré sur $K$ par une seule racine de $p(X)$ contient nécessairement les autres racines, cela dit si $p(X)$ admet une seule racine réelle  alors il admet $4$ autre racine réelles, donc le nombre de racine réelles de $p(X)$ et soit $0$ soit $4$. \\
+	Maintenant si $p(X)$ n'admet pas de racine réelle alors forcément il admettrait des racines complexes deux a deux conjugués, alors $D_p$ est un carré de : 
+	\begin{equation}\label{equapro}
+		(z-\bar{z})(z-w)(z-\bar{w})(\bar{z}-w)(\bar{z}-\bar{w})(w-\bar{w}) = |z-w|^2|z-\bar{w}|^2(z-\bar{z})(w-\bar{w}).
+	\end{equation}
+	Les différences $z- \bar{z}$ et $w - \bar{w}$ sont purement imaginaires et non nulles, puisque $z$ et $w$ ne sont pas des nombres réels, donc nécessairement leurs produit 
+	est réel et non nul, ainsi donc si on met au carré l'égalité \eqref{equapro}, on trouve que $D_p > 0$.\\
+	On dernier si $p(X)$ admet $4$ racines réelles alors le produits des différences de ses racines est nécessairement un nombre réel no nul, donc $D_p > 0$.
+\end{proof}
+\begin{example}
+	Soit le polynôme $p(X) = X^4 + 4X^2 -2 \in \mathbb{Q}$, il est irréductible car il est d'Eisenstein en $t = 2$, sont discriminant est $D_p = - 18432$, sa résolvante cubique associé est 
+	$\phi(X) = X^3 -4X^2 +8X -32 = (X-4)(X^2+8),$ donc d'après le théorème \ref{thechap3deg4} $G(p/\mathbb{Q}) \simeq D_4 , \, ou \, \mathbb{Z}/4\mathbb{Z}$. Or d'après le théorème \ref{thechap3deg4.1} et comme on $D_p < 0$ alors  $G(p/\mathbb{Q}) \simeq D_4$.
+\end{example}
+\subsection{Distinction entre $\mathbb{Z}/4\mathbb{Z}$ et $D_4$ (Théorème Kappe, Warren)} 
+On ne peut décider on utilisant le théorème \ref{thechap3deg4.1} si un groupe de Galois d'un polynôme est isomorphe a $D_4$ ou $\mathbb{Z}/4\mathbb{Z}$ dans le cas ou son discriminant est strictement positif, dans la suite nous donnerons une méthode a fin de calculer précisément par le théorème Kappe, Warren le groupe de Galois associé par le théorème.\\
+On a vu dans la section précédente que $G(p/K) \simeq D_4 \, ou \, \mathbb{Z}/4\mathbb{Z}$, si et seulement si, $D_p$ est un carré dans $K$ et sa résolvante cubique associé noté $\phi(X)$, est réductible sur $K[X]$ et quand cela se produit $\phi(X)$ admettrais une seule racine dans $K$.
+\begin{theorem}{(Kappe, Warren)}
+	Sous les hypothèses de la section précédente, Soit $\Delta = D_p$, on suppose que $\Delta \not\in K^2$ et $\phi(X)$ est réductible dans $K[X]$ avec une seule racine $\beta \in K$, alors $G(p/K) \simeq \mathbb{Z}/4\mathbb{Z}$ si les polynômes $X^2 + aX + (b-\beta)$ et $X^2 - \beta X +d $ sont scindé sur $K(\sqrt{\Delta})$, sinon $G(p/K) \simeq D_4$.
+\end{theorem}
+\begin{proof}
+	Soit $1 \leq \al_{i} \leq 4$, les racines de $p(X)$, on pose $\beta = \al_{1}\al_{2}+\al_{3}\al_{4}$, $D_4$ et $\mathbb{Z}/4\mathbb{Z}$ étant tout les deux des sous-groupes de $S_4$, contenant un $4$-cycle (les éléments d'ordre $4$ dans $S_4$ sont des $4$-cycle), dans le tableau suivant nous décrivons l'effet de chaque un des $4$-cycle sur $\beta$, cela dit nous virons si ce $4$-cycle appartient a un groupe de Galois, les racines distincts de $\phi(X)$ sont dans la deuxième ligne. \\
+	
+	\begin{table}[!h]
+		\begin{center}
+			\begin{tabular}{c | c c c c c c }
+				$\sigma$ & $(1234)$ & $(1432)$ & $(1243)$ & $(1342)$& $(1324)$ & $(1423)$ \\ 
+				\hline 
+				$\sigma(\beta)$ & $\al_{2}\al_{3} + \al_{4}\al_{1}$ & $\al_{4}\al_{1} + \al_{2}\al_{3}$& $\al_{2}\al_{4} + \al_{1}\al_{3}$& $\al_{3}\al_{1} + \al_{4}\al_{2}$ & 
+				$\al_{3}\al_{4} + \al_{2}\al_{1}$ & $\al_{4}\al_{3} + \al_{1}\al_{2}$
+			\end{tabular}
+			\caption{Représentation des $4$-cycle}
+		\end{center}
+	\end{table} 
+	Puisque $\beta$ est fixé par $G(p/K)$, les seules $4$-cycle possible sont $(1324)$ et $(1423)$, les deux sont dans $G(p/K)$, puisque au moins un des deux l'est et il sont des inverses. Soit alors $\sigma= (1324)$.\\
+	Si $G(p/K) \simeq \mathbb{Z}/4\mathbb{Z}$ alors $G(p/K) \simeq \left\langle \sigma \right\rangle $, si $G(p/K) \simeq D_4$, alors $G(p/K) = \left\langle (13240),(12)\right\rangle = \left\lbrace (1),(1324),(12)(34),(1423),(12),(34),(13)(24),(14)(23)\right\rbrace$, et les éléments de $G(p/K)$ fixant $\al_{1}$ sont $(1)$ et $(34)$, on pose $\tau = (34)$, le tableau suivant représente le produit $\sigma$ et $\tau$ en tant que cycle disjoint \\
+	
+	\begin{table}[!h]
+		\begin{center}
+			\begin{tabular}{c c c c c c c c}
+				$1$ & $\sigma$ & $\sigma^2$ & $\sigma^3$ & $\tau$ & $\tau\sigma$ & $\sigma^2\tau$ & $\sigma^3\tau$ \\ 
+				\hline
+				$(1)$ & $(1324)$ & $(12)(34)$ & $(1423)$ & $(34)$ & $(13)(24)$ & $(12)$ & $(14)(23)$
+			\end{tabular}
+			\caption{ le produit $\sigma$ et $\tau$ en tant que cycle disjoint}
+		\end{center}
+	\end{table} 
+	Les sous-groupes engendrés par $\left\langle \sigma \right\rangle $ et $\left\langle \sigma , \tau \right\rangle $, sont très différent, voir le treillis suivant \\
+	\begin{figure}[!h]
+		\begin{equation*}	
+			\xymatrix{
+				\left\lbrace id\right\rbrace \ar @{-}[d]\\
+				\left\lbrace \sigma^2\right\rbrace \ar @{-}[d]\\
+				\left\lbrace \sigma\right\rbrace \ar @{-}
+			} \;\;\;\;\;
+			\xymatrix {
+				&& \left\lbrace id\right\rbrace \\
+				\left\lbrace \tau \right\rbrace \ar @{-}[rru] \ar @{-}[rd] & \left\lbrace \sigma^2\tau\right\rbrace \ar @{-}[ru] \ar @{-}[d] & \left\lbrace \sigma^2\right\rbrace  \ar @{-}[u] \ar @{-}[rd] \ar @{-}[d] \ar @{-}[ld] & \left\lbrace \sigma\tau\right\rbrace \ar @{-}[lu] \ar @{-}[d] & \left\lbrace \sigma^3\tau \right\rbrace \ar @{-}[llu] \ar @{-}[ld] \\
+				& \left\lbrace (\sigma^2 \, \text{,}\, \tau)\right\rbrace \ar @{-}[rd] & \left\lbrace \sigma \right\rbrace  \ar @{-}[d] & \left\lbrace (\sigma^2 \, \text{,}\, \sigma\tau)\right\rbrace \ar @{-}[ld] \\
+				&& \left\lbrace (\sigma \, \text{,}\, \tau)\right\rbrace
+			}
+		\end{equation*} 
+		\caption{Sous-groupes engendrés par $\left\langle \sigma \right\rangle $ et $\left\langle \sigma , \tau \right\rangle $}
+	\end{figure}
+	\\
+	En se basant sur le treillis ci-dessus, le treillis suivant représente les sous-corps du corps de décomposition de $p(X)$, $L$ ici désigne dans les deux cas l'unique extension quadratique de $K$ contenue dans $K(\al_{1})$: Si $G(p/K) \simeq \mathbb{Z}/4\mathbb{Z}$, alors $L$ correspond au sous-groupe engendré par $\left\langle \sigma^2\right\rangle $, tandis que si $G(p/K) \simeq D_4$, alors $L$ correspond au sous-groupe engendré par $\left\langle \sigma^2,\tau\right\rangle $, puisque $\Delta \not\in K^2$ alors 
+	$[K(\sqrt{\Delta}) / K] = 2$. 
+	\begin{figure}[!h]
+		
+		\begin{equation*}
+			\xymatrix{
+				K(\al_{1})\ar @{-}[d]\\
+				L \ar @{-}[d]\\
+				K \ar @{-}
+			} 
+			\xymatrix {
+				&& K(\al_{1},\al_{2},\al_{3},\al_{4}) \\
+				K(\al_{1}) \ar @{-}[rru] \ar @{-}[rd] & K(\al_{3}) \ar @{-}[ru] \ar @{-}[d] & L \ar @{-}[u] \ar @{-}[rd] \ar @{-}[d] \ar @{-}[ld] & K(\al_{2}) \ar @{-}[lu] \ar @{-}[d] & K(\al_{4}) \ar @{-}[llu] \ar @{-}[ld] \\
+				& L \ar @{-}[rd] & K \ar @{-}[d] & K(\sqrt{\Delta}) \ar @{-}[ld] \\
+				&& K
+			}
+		\end{equation*}
+		
+		\caption{Les sous-corps du corps de décomposition de $p(X)$}
+	\end{figure}
+	\\
+	
+	Si $G(p/K) \simeq \mathbb{Z}/4\mathbb{Z}$, alors $L = K(\sqrt{\Delta})$ puisque il existe une seule extension quadratique de $K$ dans le corps de décomposition de $p(X)$.\\
+	Si $G(p/K) \simeq D_4$, on sait que $K(\al_{1})$ correspond a $\left\langle \tau \right\rangle$, $K(\al_{3})$ correspond a $\left\langle \sigma^2\tau\right\rangle $, et 
+	$K(\sqrt{\Delta})$ correspond $\left\langle \sigma^2,\sigma\tau\right\rangle $. $[K(\al_{1}) / K] = 4$, donc son sous-groupe correspond dans $D_4$ a $\left\langle \sigma , \tau \right\rangle $ d'ordre $8$, $\dfrac{8}{4} = 2$ et $\tau = (34)$ fixe $\al_{1}$ et son ordre est $2$. D'une manière similaire, on a $[K(\al_{3})/K]=4$ et $\sigma^2\tau=(12)$ fixe $\al_{3}$. Le sous-groupe correspond à $K(\sqrt{\Delta})$ sont les permutations paires dans le groupe de Galois, et c'est $\left\lbrace (1),(12)(34),(13)(24),(14)(23)\right\rbrace \simeq \left\langle \sigma^2,\sigma\tau\right\rangle $.\\
+	Bien que les deux cas $G(p/K)\simeq \mathbb{Z}/4\mathbb{Z}$ et $G(p/K)\simeq D_4$ soient différents, nous allons développé quelques idées pour les deux concernant les extensions quadratiques $K(\al_{1})/,L$ et $L/K$ avant de distinguer ces deux derniers l'un de l'autre.\\
+	Si $G(p/K)\simeq \mathbb{Z}/4\mathbb{Z}$, $Gal(K(\al_{1})/L)=\left\lbrace 1,\sigma^2\right\rbrace $. Si $G(p/K)\simeq D_4$, $Gal(K(\al_{1})/L)=\left\langle 1,\sigma^2\right\rangle / \left\langle \tau \right\rangle =\left\lbrace 1,\sigma^2\right\rbrace $. Alors dans les deux cas, le conjugué de $\al_{1}$ dans $L$ est $\sigma^2(\al_{1}) = \al_{2}$, le polynôme minimal de $\al_{1}$ sur $L$ est alors $$(X-\al_{1})(X-\al_{2}) = X^2 - (\al_{1} + \al_{2})X + \al_{1}\al_{2}.$$
+	Par conséquent $\alpha_{1} + \al_{2}$ et $\alpha_{1}\al_{2}$ sont dans $L$, puisque $[K(\al_{1})/ K] = 4$, ce polynôme n'est pas dans $K[X]$ : 
+	\begin{equation}\label{equationchap4.0}
+		\alpha_{1} + \al_{2} \not\in K \; ou \; \al_{1}\al_{2} \not\in K.
+	\end{equation}
+	Si $G(p/K) \simeq \mathbb{Z}/4\mathbb{Z}$, alors $Gal(L / K) = \left\langle \sigma \right\rangle  / \left\langle \sigma^2 \right\rangle = \left\lbrace 1,\bar{\sigma}\right\rbrace $, la classe de $\sigma$ dans $Gal(L / K)$ cette classe est aussi non trivial, donc $L^\sigma = K$, c'est un élément de $L$ fixé par $\sigma$ dans $K$, puisque $\sigma(\al_{1}+ \al_{2}) = \al_{3} + \al_{4}$ et $\sigma(\al_{1}\al_{2}) = \al_{3}\al_{4}$, les polynômes suivantes : 
+	\begin{equation}\label{equationchap4dernier}
+		(X-(\al_{1} +\al_{2}))(X-(\al_{3} + \al_{4})) = X^2 - (\al_{1}+\al_{2}+\al_{3}+\al_{4})X + (\al_{1}+\al_{2})(\al_{3}+\al_{4}),
+	\end{equation}
+	et 
+	\begin{equation}\label{equationchap4.1dernier}
+		(X-\al_{1}\al_{2})(X-\al_{3}\al_{4}) = X^2 - (\al_{1}\al_{2}+\al_{3}\al_{4})X + \al_{1}\al_{2}\al_{3}\al_{4}.
+	\end{equation} 
+	Ont tous les deux des coefficients dans $L^\sigma = K$.\\
+	Les coefficients linières présent dans l'équation \eqref{equationchap4dernier} sont $a$ et le terme constant est 
+	$$(\al_{1} + \al_{2})(\al_{3}+\al_{4}) = \al_{1}\al_{3} + \al_{1}\al_{4} + \al_{2}\al_{3} + \al_{2}\al_{4} = b - (\al_{1}\al_{2} + \al_{3}\al_{4}) = b - \beta,$$
+	donc l'équation \eqref{equationchap4dernier} est égale a $X^2 + aX + (b-\beta)$, le polynôme quadratique \eqref{equationchap4.1dernier} est $X^2 - \beta X + d$, si $\alpha_{1}+ \alpha_{2} \not\in K$, \eqref{equationchap4dernier} est irréductible dans $K[X]$, alors son discriminant n'est pas un carré dans $K$, sinon si $\alpha_{1}+ \alpha_{2} \in K$ alors \eqref{equationchap4dernier} admet une racine double et son discriminant vaut alors $0$. \\
+	De la même manière le discriminant de \eqref{equationchap4.1dernier} n'est pas un carré ou bien il vaut $0$, par conséquent le corps de décomposition de \eqref{equationchap4.1dernier} ou \eqref{equationchap4dernier} sur $K$ est soit $L$ soit $K$ et d'après \eqref{equationchap4.0} au moins un discriminant de l'une des deux équations \eqref{equationchap4.1dernier} ou \eqref{equationchap4dernier} n'est pas un carré dans $K$, donc son corps de décomposition est $L$.\\
+	Puisque $\alpha_{1} + \alpha_{2}$ et $\alpha_{1}\alpha_{2}$ sont dans $L$ et $[L / K] = 2$, chacun deux engendre l'extension $L$ sur $K$ dans le cas ou il ne sont pas de $K$, et cela se produit pour au moins un des deux nombres.\\
+	Premièrement on suppose que $G(p/K) \simeq \mathbb{Z}/4\mathbb{Z}$ alors $L = K(\sqrt{\Delta})$, donc $X^2 + aX + (b- \beta)$ et $X^2 - \beta X + d$, se décomposent complément sur $K(\sqrt{\Delta})$, puisque leurs racines sont dans $L$.\\
+	Maintenant on suppose que $G(p/K) \simeq D_4$, alors $L \ne K(\sqrt{\Delta})$, on sait que au moins l'un des polynômes \eqref{equationchap4.1dernier},\eqref{equationchap4dernier} est irréductible sur $K$, donc leurs racines engendrent l'extension $L$ sur $K$ donc elle ne sont pas dans $K(\sqrt{\Delta})$, ainsi le polynômes \eqref{equationchap4.1dernier} ou \eqref{equationchap4dernier} est irréductible sur $K(\sqrt{\Delta})$, si il est irréductible sur $K$.\\
+	Cela dit puisque les conclusion sur les deux polynôme quadratiques sur $K(\sqrt{\Delta})$ sont différentes et elle dépende du choix de $G(p/K)$, donc la détermination de groupe de Galois associé dépend aussi de ces deux polynômes. Ce qui achève la démonstration.   
+\end{proof}
+\begin{corollary}\label{corollaire D_4 et Z/4Z}
+	Sous les hypothèses précédentes, le tableau suivant décrit les groupes de Galois d'un polynôme de degré $4$ : 
+	\begin{table}[!h]
+		\begin{center}
+			\begin{tabular}{c || c || c || c}
+				$\Delta \in K$ & $\phi(X) \in K[X]$ & $(a^2 - 4(b-\beta))\Delta$ et $(\beta^2 - 4d)\Delta$ & $G(p/K)$ \\
+				\hline 
+				n'est pas un carré & irréductible  & & $S_4$ \\ 
+				carré & irréductible & & $A_4$ \\ 
+				n'est pas un carré & $\beta \in K$ & au moins une racine $\not\in K^2 $& $D_4$ \\ 
+				n'est pas un carré & $\beta \in K$ & les deux racines $ \in K^2$ & $\mathbb{Z}/4\mathbb{Z}$ \\ 
+				carré & réductible & & $V$
+			\end{tabular}
+			\caption{Les groupes de Galois d'un polynôme de degré $4$}
+		\end{center}
+	\end{table}
+\end{corollary}
+\begin{proof}
+	Les polynômes $X^2 + aX + (b - \beta)$ et $X^2 + \beta X + d$, sont scindé sur $K(\sqrt{\Delta})$, si et seulement si, leurs discriminant respectifs, $a^2 - 4(b - \beta)$ et $\beta^2 - 4d$ sont des carré dans $K(\sqrt{\Delta})$, comme on a vu dans le théorème précédent leurs discriminants valent soit $0$ soit un nombre qui n'est pas un carré dans $K$, cela dit un nombre qui n'est pas un carré dans $K$; est un carré dans $K(\sqrt{\Delta})$, si est seulement si, sont produit avec le discriminant $\Delta$ et un carré, ce résultat est aussi vérifié pour $0$. 
+\end{proof}
+\begin{example} \label{EXEMPLED4}
+	Dans le tableau suivant on vas donner quelques exemples des groupes de Galois d'un polynôme unitaire ($X^4 +cX +d$)  sur $\mathbb{Q}$, on vas tout de même mettre en évidence les cas ou on doit décider entre $D_4$ et $\mathbb{Z}/4\mathbb{Z}$. 
+	\begin{table}[!h]
+		\begin{center}
+			\begin{tabular}{c || c || c || c || c }
+				$X^4 +cX +d$ & $\Delta$ & $X^3 - 4dX - c^2$ & $4\beta\Delta$ et $(\beta^2 - 4d)\Delta$ & $G(p/K)$ \\ 
+				\hline
+				$X^4 +3X +3$ & $21\times 15^2$& $(X+3)(X^2 - 3X - 3)$ & $-56700$,$-14175$ & $D_4$ \\ 
+				$X^4 +5X +5$ & $5\times 55^2$ & $(X-5)(X^2 + 5X +5)$ & $550^2$,$275^2$ & $\mathbb{Z}/4\mathbb{Z}$ \\ 
+				$X^4 +8X +14$ & $2\times 544^2$ & $(X-8)(X^2 + 8X + 8)$ & $4352^2$,$2176^2$ & $\mathbb{Z}/4\mathbb{Z}$ \\ 
+				$X^4 +13X +39$ & $13\times1053^2$& $(X-13)(X^3 + 13X + 13)$ & $27378^2$, $13689^2$ & $\mathbb{Z}/4\mathbb{Z}$ \\ 
+				$X^4 +36X +63$ & $4320^2$ & $(X-18)(X+6)(X+12)$& // & $V$
+			\end{tabular}
+			\caption{Groupes de Galois d'un polynôme unitaire ($X^4 +cX +d$)  sur $\mathbb{Q}$}
+		\end{center}
+	\end{table}
+\end{example}
+\begin{example}
+	Le tableau suivant donne quelques exemples des groupe de Galois des polynômes de degré $4$ sur $\mathbb{F}_p$. on précisent cette fois si c'est $D_4$ ou $\mathbb{Z}/4\mathbb{Z}$,\\ $\Delta_1 = (a^2 - 4(b-\beta))\Delta$ et $\Delta_2 = (\beta^2 - 4d)\Delta.$\\ 
+	$\phi(X)$ réductible dont la racine est $\beta$.
+		\begin{table}[!h]
+			\tiny
+		\begin{center}
+			\begin{tabular}{c || c || c || c || c || c }
+				$f(X)$ & $\mathbb{F}_p$ & $\Delta$ & $\beta$ & $\Delta_1$ et $\Delta_2$ & $G(p/K)$ \\ 
+				\hline
+				$X^4 +10X^3 + X^2 +7X + 2$&$\mathbb{F}_{11}$ & $2\not\in\left( \mathbb{F}_{11}\right)^2$&$\beta = 4$ & $\Delta_1 = 4 \in \left( \mathbb{F}_{11}\right) ^2$,$\Delta_2=5 \in\left( \mathbb{F}_{11}\right) ^2$ & $\mathbb{Z}/4\mathbb{Z}$ \\ \hline
+				$X^4 +7X^3+3X + 1$&$\mathbb{F}_{13}$ & $7\not\in\left( \mathbb{F}_{13}\right)^2$&$\beta = 6$ & $\Delta_1 = 4 \in \left( \mathbb{F}_{13}\right) ^2$,$\Delta_2=3 \in\left( \mathbb{F}_{13}\right) ^2$ & $\mathbb{Z}/4\mathbb{Z}$ \\ \hline
+				$X^4 +201X^3 + 2001X^2 +2002X + 4$&$\mathbb{F}_{2003}$ & $1244\not\in\left( \mathbb{F}_{2003}\right)^2$&$\beta = 3$ & $\Delta_1 = 412 \not\in \left( \mathbb{F}_{2003}\right) ^2$,$\Delta_2=1307 \not\in\left( \mathbb{F}_{2003}\right) ^2$ & $D_4$ \\ \hline 
+				$X^4 +2X^3 + 17X^2  + 26$&$\mathbb{F}_{71}$ & $21\not\in\left( \mathbb{F}_{71}\right)^2$&$\beta = 56$ & $\Delta_1 = 23 \not\in \left( \mathbb{F}_{71}\right) ^2$,$\Delta_2=56 \not\in\left( \mathbb{F}_{71}\right) ^2$ & $D_4$ \\ \hline 
+				$X^4 +14X^3 + 6X + 58$&$\mathbb{F}_{103}$ & $39\not\in\left( \mathbb{F}_{103}\right)^2$&$\beta = 77$ & $\Delta_1 = 86 \not\in \left( \mathbb{F}_{103}\right) ^2$,$\Delta_2=12 \not\in\left( \mathbb{F}_{103}\right) ^2$ & $D_4$ \\ \hline
+				$X^4 +2016X^3 + 2015X^2 +2014X + 2013$&$\mathbb{F}_{2017}$ & $980\not\in\left( \mathbb{F}_{2017}\right)^2$&$\beta = 516$ & $\Delta_1 = 116 \in \left( \mathbb{F}_{2017}\right) ^2$,$\Delta_2=1219 \not\in\left( \mathbb{F}_{2017}\right) ^2$ & $D_4$ \\ \hline
+			\end{tabular}
+			\caption{Quelques exemples des groupe de Galois des polynômes de degré $4$ sur $\mathbb{F}_p$}
+		\end{center}
+	\end{table}
+\end{example} 
+\begin{corollary}
+	Soit $f(X) = X^4 +bX^2 +d \in K[X]$, un polynôme unitaire irréductible de degré $4$, alors 
+	\begin{enumerate}
+		\item $d \in K^2 \Longrightarrow G(f/K) \simeq V.$
+		\item $d \not\in K^2, \, (b^2-4d)d \in K^2 \Longrightarrow G(f/K) \simeq \mathbb{Z}/4\mathbb{Z}.$
+		\item $d \not\in K^2, \, (b^2-4d)d \not\in K^2 \Longrightarrow G(f/K) \simeq D_4$.   
+	\end{enumerate} 
+	Dans la seconde condition, nous pourrions simplifier les hypothèses pour que $(b^2-4d)\times d$ soit un carré dans $K$ puisque ceci implique que $d$ ne soit pas un carré : si $$((b^2-4d)\times d) \, \text{est un carré et }d\,\,\,\text{est un carré}$$ alors $$b^2-4d\,\,\,\text{est un carré},$$ce qui contredit que $$X^4+bX+d$$ soit irréductible.
+\end{corollary}
+\begin{proof}
+	Soit $p(X)=X^4+bX+d$, et soit $D_p=16\times d \times (b^2-4d)^2$.\\ Par hypothèse,$D_p\ne 0$, alors si on lève au carré les facteurs ce sera le même que $d$.\\
+	La résolvante cubique $\phi(X)$ est $$\phi(X)=X^3-bX^2-4dX+4bd=(X-b)(X^2-4d)$$ qui est irréductible sur $K$ avec comme racine est $b$. Dans les notations du corollaire \ref{corollaire D_4 et Z/4Z}, si $\Delta$ n'est pas un carré, alors $\beta=b$, ce qui donne $\beta^2-4d=b^2-4d$ et $a^2-4(d-\beta)=0$,et nous achevons la démonstration en utilisant le corollaire \ref{corollaire D_4 et Z/4Z}.\\
+	Nous présentons dans le tableau suivant quelques exemples qui illustre ce qu'on vient de dire, le polynômes $p(X)$ sont sur $\mathbb{Q}[X]$
+	\begin{table}[!h]
+		\begin{center}
+			\begin{tabular}{|c||c||c||c|}
+				\hline
+				$p(X)$ & $d$ & $(b^2-4d)\times d$ & $G(p/K)$\\
+				\hline
+				$X^4+4X^2+1$ & $1$ & $12$ & $V$ \\
+				$X^4-4X^2+2$ & $2$ & $16$ & $\mathbb{Z}/4\mathbb{Z}$ \\
+				$X^4+4X^2-2$ & $-2$ & $-16$ & $D_4$ \\
+				$X^4+5X^2+2$ & $2$ & $34$ & $D_4$ \\
+				$X^4+5X^2+5$ & $5$ & $25$ & $\mathbb{Z}/4\mathbb{Z}$ \\
+				$X^4+5X^2+3$ & $3$ & $13$ & $D_4$ \\
+				\hline
+			\end{tabular}
+			\caption{ Quelques exemples pour illustrer le corollaire \ref{corollaire D_4 et Z/4Z}}
+		\end{center}
+	\end{table}
+\end{proof}
+\subsection{Distinction entre $\mathbb{Z}/4\mathbb{Z}$ et $D_4$ (Méthode Classique)} 
+Dans la suite nous donnerons la méthode classique pour déterminer les groupes de Galois d'uu polynôme de degré $4$; pour cela considérons le théorème suivant : 
+\begin{theorem} \label{thancien}
+	Sous les hypothèses précédente, soit $p(X)$ un polynôme irréductible, on suppose que $D_p = \Delta \not\in K^2$ et $\phi(X)$ réductible dans $K[X]$ alors $G(p/K)$ est décrit comme suit : 
+	\begin{enumerate}
+		\item si $p(X)$ est irréductible sur $K(\sqrt{\Delta}) \Longrightarrow G(p/K) \simeq D_4$.
+		\item si $p(X)$ est réductible sur $K(\sqrt{\Delta}) \Longrightarrow G(p/K) \simeq \mathbb{Z}/4\mathbb{Z}$.
+	\end{enumerate}
+\end{theorem} 
+\begin{proof}
+	Si $G(p/K) \simeq D_4$, on sait d'après le treillis précédent que $Dec_K(p(X))$ est $K(\al_1,\sqrt{\Delta})$, puisque $[K(\al_1,\sqrt{\Delta}) / K] = 8 \, ; [K(\al_1,\sqrt{\Delta}) / K(\sqrt{\Delta})] = 4$, alors $p(X)$ doit être nécessairement irréductible sur $K(\sqrt{\Delta})$. \\ 
+	Si $G(p/K) \simeq \mathbb{Z}/4\mathbb{Z}$, $[Dec_K(p(X)) / K(\sqrt{\Delta})] = 2$, alors $p(X)$ est réductible sur  $K(\sqrt{\Delta})$.
+\end{proof}
+\begin{example}
+	Posons $K=\mathbb{Q}$, les polynômes $p_1(X)=X^4+3X+2$ et $p_2(X)=X^2+5X+5$ dont les discriminants sont $D_{p_1}$ et $D_{p_2}$ présentés dans le tableaux suivants, vérifient tout les deux les hypothèses du théorème \ref{thancien}. Nous allons utiliser ce théorème afin de leur trouver leurs groupes de Galois sur $\mathbb{Q}$\\
+	\begin{table}[!h]
+		\begin{center}
+			\begin{tabular}{|c||c||c||c|}
+				\hline
+				$p_i(X)$ & $D_{p_i}$ & $\phi_i(X)$ & $G(p_i/K)$\\
+				\hline
+				$p_1(X)$ & $21\times 15^2$ & $(X+3)(X^2-3X-3)$ & $D_4$\\
+				$p_2(X)$ & $5 \times 55^2$ & $(X-5)(X^2+5X+5)$ & $\mathbb{Z}/4\mathbb{Z}$\\
+				\hline
+			\end{tabular}
+			\caption{ Les groupes de Galois de $p_1$ et de $p_2$}
+		\end{center}
+	\end{table}\\
+	Afin de trouver le groupe de Galois en utilisant le théorème \ref{thancien}, nous devons savoir si $p_1$ est irréductible sur $\mathbb{Q}(\sqrt{21})$ et si $p_2$ est irréductible sur $\mathbb{Q}(\sqrt{5})$. En fait, ce théorème dit que si un polynôme $P$ est irréductible sur un sous corps quadratique de son corps de décomposition, alors $G(P/K)\simeq D_4$ ; Si $P$ est réductible sur un sous-corps de son corps de décomposition, alors $G(P/K)\simeq \mathbb{Z}/2^2\mathbb{Z}$.\\
+	Ces polynômes sont tous les deux irréductibles sur $\mathbb{Q}$, alors leurs racines sont de degré $4$ sur $\mathbb{Q}$ et par conséquent ils n'appartiennent pas au sous-corps quadratique du corps de décomposition de ces deux polynômes. Ceci veut dire que s'ils sont réductibles sur les sous-corps quadratiques de leurs corps de décompositions, ceci doit être un produit de deux polynômes de degré $2$.\\
+	Afin de connaître si $p_1(X)$ est irréductible sur $\mathbb{Q}(\sqrt{21})$, nous supposons que $p_1$ se factorise de la manière suivante $$p_1(X)=X^4+3X+3=(X^2+AX+B)(X^2+CX+D)$$ et nous calculons les coefficients des polynômes de degré $2$. Nous trouverons le système suivant
+	\begin{equation}
+		\begin{cases}
+			A+C=0\\
+			B+D+AC=0\\
+			AD+BC=3\\
+			BD=3\\
+		\end{cases}
+	\end{equation} 
+	ce qui implique que $C=-A$ et $D=-AC-B=A^2-B$, alors la troisième condition devient $A(A^2-2B)=3$. Ceci nécessite que $A\ne 0$ et par suite nous pourrons trouver $B$: $$B=\dfrac{A^3-3}{2A}$$
+	Et par suite nous aurons la quatrième condition $BD=3$ devient $$3=\dfrac{A^3-3}{2A}\left( A^2-\dfrac{A^3-3}{2A}\right) =\dfrac{A^6-9}{4A^2}$$ et par suite $$0=A^6-12A^2-9=(A^2)(A^4-3A^2-3)$$ Cette dernière équations doit avoir une solution $A$ dans $\mathbb{Q}(\sqrt{21})$. L'équation $A^2+3=0$ n'a aucune solution dans $\mathbb{R}$ donc de même dans $\mathbb{Q}(\sqrt{21})$. Comme $X^4-3X^2-3$ est irréductible sur $\mathbb{Q}$, alors ses racines sont de degrés $4$ sur $\mathbb{Q}$ et celles-ci ne peuvent être dans $\mathbb{Q}(\sqrt{21})$, ce qui est absurde. Et ceci prouve bien que $p_1(X)$ est irréductible sur $\mathbb{Q}(\sqrt{21})$. Et ceci implique que $$G(p_1/\mathbb{Q})\simeq D_4$$ et ceci est exactement le résultat que nous avons vu dans le tableau de l'exemple \ref{EXEMPLED4}.\\
+	Nous utilisons exactement la même méthode de factorisation qu'on a vu pour le polynôme $p_1(X)$ pour factoriser $p_2(X)$ sur $\mathbb{Q}(\sqrt{5})$, nous aurons à la fin ces égalités suivantes : $$0=A^6-20A^2-25=(A^2-5)(A^4+5A+5)$$ cette équation a pour $A=\sqrt{5}$ une solution dans $\mathbb{Q}(\sqrt{5})$, et ceci permet la factorisation sur ce corps $$p_2(X)=X^4+5X+5=\left( X^2+\sqrt{5}X+\dfrac{5-\sqrt{5}}{2}\right) \left( X^2-\sqrt{5}X+\dfrac{5+\sqrt{5}}{2}\right) $$ ce qui implique que $$G(p_2/\mathbb{Q})\simeq \mathbb{Z}/4\mathbb{Z}$$ 
+\end{example}
+\newpage
+\section{Algorithme de détermination des groupes de Galois des extension cubiques et quartiques}
+Dans cette section nous proposons deux algorithmes qui illustrent les résultats obtenus dans le chapitre 3, on vas définir dans un premier temps les fonctions communes entre les deux algorithmes, la liste suivante donne les noms des fonctions ainsi que leurs utilités : 
+\begin{enumerate}
+	\item \textbf{Fonction Pow() :} Calcule la puissance d'un nombre. 
+	\item \textbf{Fonction TestRedu() :} Test si un polynôme est réductible.
+	\item \textbf{Fonction Disc() :} Calcule le discriminant d'un polynôme. 
+	\item \textbf{Fonction TestCarre() :} Test si le discriminant est un carré.
+	\item \textbf{Fonction RechercheRacine() :} Recherche d'une racine d'un polynôme.
+\end{enumerate}
+Ensuite nous donnerons les deux algorithmes a savoir le premier pour les extensions cubiques (\textbf{Algorithme GroupeGaloisCubique}), le deuxième pour les quartiques basé sur la méthode de Kappe, Warren, (\textbf{Algorithme GroupeGaloisQuartique}).
+Le liens suivant et le QR code représente une application écrite avec le langage \underline{C++}, des deux algorithmes précédent : 
+\begin{center}
+	\url{https://github.com/root-bayou/M2ACCPFE.git}
+\end{center} 
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=3cm, height=3cm]{qrcode}
+	\label{fig:qrcode}
+\end{figure} 
+Vous pouvez l'exécuter directement en ligne :  
+\begin{center}
+	\url{https://onlinegdb.com/SZ-36t7yp}
+\end{center}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=3cm, height=3cm]{qrcode1}
+	\label{fig:qrcode}
+\end{figure} 
+
+\begin{algorithm}[!ht]
+		\Entree{$a,i$ : entier }	
+		$j \leftarrow 2 $\;
+		 \Tq {$j \leq i$}{
+	 	$a \leftarrow a \times a $\; 
+	 	$j \leftarrow j+1 $\;
+ 		}
+ 	\Retour{[$a$]}
+ 	\caption{Pow($a,i$)}
+ 	\end{algorithm}
+ \begin{algorithm}[!ht]
+ 	\Entree{$p,q,r,car$ : entier }	
+ 	$TRed \leftarrow faux$ \;
+ 	$i \leftarrow 1 $\;
+ 		\Si{($r = 0$)} {
+ 		
+ 		$TRed \leftarrow vrai$ \;
+ 	}
+ 	\Si{($car = 0$ et $r \ne 0$)}{
+ 	
+ 	\Si{($r < 0$)}{
+ 	$r \leftarrow r\times(-1)$
+ 	} 
+ 
+ 	\Tq{($i \leq r$ et $TRed = faux$)}{
+ 		\Si{($i \mod r = 0$)}{
+ 			\Si{($f(i) =0$ ou $f(-i) = 0$)}{
+ 			$TRed \leftarrow vrai$\;}
+ 		}
+ 	$i \leftarrow i +1$\;	
+ 	}
+ 		
+ 	}
+ \SinonSi{($car \ne 0$ et $r \ne 0$)}{
+ 	$i \leftarrow 0$\;
+ 	\Tq{($i < car$ et $TRed = faux$)}{
+ 	\Si{($f(i) \mod car = 0$)}{
+ 		$TRed \leftarrow vrai$\;
+ 	} 
+ 	$i \leftarrow i+1$\;
+}
+	
+}
+ 	
+ 	\Retour{[TRed]}
+ 	\caption{TestRedu($f(X)= X^3+pX^2+qX+r,car$)}
+ \end{algorithm}
+\begin{algorithm}[!ht]
+	\Entree{$p,q,r,car$ : entier }	
+	$Det \leftarrow 18pqr - 4Pow(p, 3)r + Pow(p, 2)Pow(q, 2) - 4Pow(q, 3) - 27Pow(r, 2)$\;
+	\Si{($car \ne 0$)}{
+		$det \leftarrow det \mod car$\;
+	}
+	
+	\Retour{[$det$]}
+	\caption{Disc($f(X)= X^3+pX^2+qX+r,car$)}
+\end{algorithm}
+\begin{algorithm}[!ht]
+	\Entree{$disc,car$ : entier }
+	$carre \leftarrow faux$\;
+	$i \leftarrow 0$\;
+		$j \leftarrow 0$\;
+	\eSi{($car = 0$)}{
+		\eSi{($\sqrt{disc} \in \mathbb{Z}$)}{
+			$carre \leftarrow vrai$\;
+		}{$carre \leftarrow faux$\;}
+	} {
+		\Tq{($i < car$ et $carre = faux$)} {
+		$j \leftarrow Pow(i,2)$\;
+		\eSi{($j \mod car = 0$)}
+			{$carre \leftarrow vrai$\;}
+		{
+			$carre \leftarrow faux$\;
+		} 
+	$i \leftarrow i + 1$\;
+	}
+	}
+	
+	\Retour{[$carre$]}
+	\caption{TestCarre($D_f,car$)}
+\end{algorithm}
+\begin{algorithm}[!t]
+	\Entree{$p,q,r,car$ : entier }	
+	$trouve \leftarrow faux$\;
+	$i \leftarrow 0$\;
+	$racine \leftarrow 0$\;
+	\eSi{($car = 0$)}{
+		\Tq{($trouve = faux$)}{
+			
+			\Si{($f(i) = 0$)}{
+			$trouve \leftarrow vrai$\;
+			$racine \leftarrow i$\;	
+			}
+			\SinonSi{($f(-i) = 0$)}{
+			$trouve \leftarrow vrai$\;
+			$racine \leftarrow -i$\;
+			}
+			\Sinon{
+				$trouve \leftarrow faux$\;
+				$i \leftarrow i+1$\;
+			}
+		}
+}{
+	\Tq{($trouve = faux$ et $i < car$)}{
+		\eSi{($f(i) \mod car = 0 $)} {
+		$trouve \leftarrow vrai$\;
+		$racine \leftarrow i$\;
+	}{$trouve \leftarrow faux$\;
+	$i \leftarrow i+1$\;}
+	}
+}
+	
+	\Retour{[$racine$]}
+	\caption{RechercheRacine($f(X),car$)}
+\end{algorithm} 
+\begin{algorithm}[!t]
+	\Entree{$p,q,r,car$ : entier }	
+	\Si{($TestRedu(p,q,r,car) = faux$ et $TestCarre(Disc(p,q,r,car),car) = faux$ )}{
+		\Res{Le groupe de Galois $\simeq S_3$}
+	}
+	\Si{($TestRedu(p,q,r,car) = faux$ et $TestCarre(Disc(p,q,r,car),car) = vrai$ )}{
+		\Res{Le groupe de Galois $\simeq A_3$}
+	}
+	\caption{GroupeGaloisCubique}
+\end{algorithm}
+\begin{algorithm}[!t]
+	\Entree{$p,q,r,s,car$ : entier }
+	$a \leftarrow -q$\;
+	$b \leftarrow pr - 4s$\;
+	$c \leftarrow Pow(p,2)s+ Pow(r,2) -qs$\;
+	\Si{$car \ne 0$}{
+		$a \leftarrow a \mod car$\;
+		$b \leftarrow b \mod car$\;
+		$c \leftarrow c \mod car$\;
+	}
+	$\phi(X) = X^3 + aX^2 + bX + c$\;
+	$\Delta \leftarrow Disc(a,b,c,car)$\;
+	\eSi{($TestCarre(Disc(a,b,c,car),car) = vrai$)}{
+		
+		\eSi{($TestRedu(a,b,c,car) = faux$)}{
+			\Res{Le groupe de Galois $\simeq A_4$}
+		}{
+		\Res{Le groupe de Galois $\simeq V$}
+	}
+	}{
+		\eSi{($TestRedu(a,b,c,car) = faux$)}
+		{\Res{Le groupe de Galois $\simeq S_4$}}
+		{
+			$\beta \leftarrow RechercheRacine(a,b,c,car)$\; 
+			$f_1(X) = X^2 + pX + (q-\beta)$\; 
+			$f_2(X) = X^2 -\beta X + s$\; 
+			$\Delta_1 \leftarrow (Pow(p,2) - 4(q-\beta))\times \Delta$\; 
+			$\Delta_2 \leftarrow (Pow(\beta,2) - 4s)\times \Delta$\;
+			
+			\eSi{($Testcarre(\Delta_1,car) = vrai$ et $Testcarre(\Delta_2,car) = vrai$)}{
+				\Res{Le groupe de Galois $\simeq \mathbb{Z}/4\mathbb{Z}$}
+			}
+			{
+				\Res{Le groupe de Galois $\simeq D_4$}
+			}
+			
+			
+			
+		}
+	} 
+\caption{GroupeGaloisQuartique}
+\end{algorithm} 
+\newpage
+\chapter*{\begin{center}
+		\textbf{Conclusion}
+\end{center}} 
+\addcontentsline{toc}{chapter}{Conclusion}
+\begin{thebibliography}{1}
+	
+	\bibitem{AA}
+	{\sc J.~{Calais}}, {\em {Extension de corps - Théorie de Galois.}}, {Ellipses},(2006).
+	\bibitem{AA}
+	{\sc G.~{Gras}} et {\sc M-N.~{Gras}}, {\em {Algèbre et Arithmétique fondamentales.}}, {Ellipses},(2018).
+	\bibitem{AA}
+	{\sc J.~{Calais}}, {\em {Éléments de théorie des groupes.}}, {Ellipses},(2006).
+	\bibitem{AA}
+	{\sc J.~{Calais}}, {\em {Éléments de théorie des anneaux - anneaux commutatifs.}}, {Ellipses},(2006).
+	\bibitem{AA}
+	{\sc I.~{Gozard}}, {\em {Théorie de Galois.}}, {Ellipses},(1997).
+	\bibitem{AA}
+	{\sc C.~{Mutafian}}, {\em {Équations algébriques et théorie de Galois.}}, {THÈMES VUIBERT UNIVERSITÉ MATHÉMATIQUES},(1997).
+	\bibitem{AA}
+	{\sc I.~{Kaplansky}}, {\em {Fields and Rings.}}, {2nd ed., Univ. of Chicago Press},(1972).
+	\bibitem{AA}
+	{\sc L-C.~{Kappe}} et {\sc B.~{Warren}} , {\em {An Elementary Test for the Galois Group of a Quartic Polynomial.}}, {Amer.Math. Monthly 96},(1989).pp.133--137.
+	\bibitem{AA}
+	{\sc P.~{Morandi}}, {\em {Field and Galois Theory.}} {Graduate Texts in Mathematics book series. GTM, Volume 167}, {Springer}(1996).pp.29--30.
+\end{thebibliography}
+\end{document}
