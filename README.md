@@ -1,1 +1,1 @@
-# M-Groupe-De-Galois-Des-Extension-Cubiques-quartiques
+# Projet PFE, Groupe de Galois des extensions cubiques et quartiques.
